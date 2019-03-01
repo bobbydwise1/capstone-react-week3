@@ -30,13 +30,13 @@ function Gameboard(){
     backgroundColor: "light grey",
     border: "solid darkGrey",
     margin: "auto",
-    textAlign:  "center"
   }
 
   const gridItem = {
     backgroundColor: "lightGrey",
     border: "solid black",
     broderWidth: "0px",
+    verticalAlign: "middle",
     textAlign:  "center"
   }
 
@@ -63,7 +63,7 @@ function Gameboard(){
     [1,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
-    [1,'♖','♘','♗','⚓','☆','♔','☆','⚓','♗','♘','♖',1],
+    [1,'♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
     [1,'🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1],
   ]);
