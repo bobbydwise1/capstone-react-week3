@@ -5,18 +5,21 @@ import PropTypes from 'prop-types';
 
 function AboutRules() {
   const compBox = {
-    border: "blue",
+    border: "solid cyan",
     backgroundColor: "light yellow",
     padding: "20px"
   }
 
-  const pieceRules = {
-    InfoPawn:
-  }
+  // const pieceRules = {
+  //   InfoPawn:
+  // }
 
   return (
     <div style={compBox}>
-
+      <p>Reference Pieces:</p>
+      <ul>
+      <li>\u2654;</li>
+    </ul>
     </div>
   );
 }
