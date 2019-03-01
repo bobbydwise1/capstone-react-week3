@@ -25,6 +25,7 @@ function AboutRules() {
       <li>♘ knight</li>
       <li>♙ pawn</li>
       <li>⚔ prince</li>
+      <li> camel</li>
       <li>🐘 elephant</li>
       <li>☄ cannon</li>
       <li>⚓ ship</li>

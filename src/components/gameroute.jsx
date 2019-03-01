@@ -4,7 +4,6 @@ import * as math from 'mathjs';
 import MoveHistory from './MoveHistory';
 import Gameboard from './Gameboard';
 import CapturedBox from './CapturedBox';
-import ChatBox from './Chatbox';
 
 function GameRoute(){
   const compBox = {
@@ -15,7 +14,7 @@ function GameRoute(){
 
   const gameBoardGrid = {
     display: "grid",
-    gridTemplateColumns: "1fr 3fr 1fr 1fr",
+    gridTemplateColumns: "1fr 2fr 1fr",
     padding: "10px",
     margin: "10px"
   }
@@ -27,7 +26,6 @@ function GameRoute(){
         <MoveHistory></MoveHistory>
         <Gameboard></Gameboard>
         <CapturedBox></CapturedBox>
-        <ChatBox></ChatBox>
       </div>
     </div>
   );

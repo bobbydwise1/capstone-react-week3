@@ -22,19 +22,37 @@ function Gameboard(){
 
   const gridContainer = {
     display: "grid",
+    height: "400px",
+    width: "520px",
     gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
     gridColumnGap: "0px",
     gridRowGap: "0px",
     backgroundColor: "light grey",
-    border: "dark grey",
-    margin: "10px"
+    border: "solid darkGrey",
+    margin: "auto",
+    textAlign:  "center"
   }
 
   const gridItem = {
-    backgroundColor: "light grey",
+    backgroundColor: "lightGrey",
     border: "solid black",
-    broderWidth: "1px"
+    broderWidth: "0px",
+    textAlign:  "center"
   }
+
+  // const gameSystem = math.matrix([
+  //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+  //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
+  // ]);
 
   const gameSystem = math.matrix([
     [1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -44,13 +62,11 @@ function Gameboard(){
     [1,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
+    [1,'♖','♘','♗','⚓','☆','♔','☆','⚓','♗','♘','♖',1],
+    [1,'🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1],
   ]);
-
-console.log(gameSystem);
 
   //React method to render a grid via loop
 
