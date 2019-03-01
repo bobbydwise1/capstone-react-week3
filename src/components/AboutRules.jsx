@@ -18,7 +18,18 @@ function AboutRules() {
     <div style={compBox}>
       <p>Reference Pieces:</p>
       <ul>
-      <li>\u2654;</li>
+      <li>♔</li>
+      <li>♕</li>
+      <li>♖</li>
+      <li>♗</li>
+      <li>♘</li>
+      <li>♙</li>
+      <li>♚</li>
+      <li>♛</li>
+      <li>♜</li>
+      <li>♝</li>
+      <li>♞</li>
+      <li>♟</li>
     </ul>
     </div>
   );
