@@ -40,7 +40,9 @@ http://history.chess.free.fr/tamerlane2.htm#Moves
 ## Representation of UI state
 
 * _This project uses the math.js library, which is under Apache 2.0 license.  See the following links:_
+
 http://mathjs.org/
+
 https://github.com/josdejong/mathjs
 
 * _The game state is represented by a math.matrix() object, which is an object that represents a true matrix, that represents the game grid._
