@@ -5,7 +5,8 @@ import * as math from 'mathjs';
 function TestMathJS(){
   const compBox = {
     border: "solid black",
-    backgroundColor: "light yellow"
+    backgroundColor: "light yellow",
+    padding: "20px"
   }
   let array1 = math.matrix([[1,2],[3,4]]);
   let array2 = math.matrix([[10],[20]]);

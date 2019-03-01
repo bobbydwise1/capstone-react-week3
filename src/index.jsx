@@ -5,6 +5,8 @@ import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+document.body.style.backgroundColor = 'OldLace';
+
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>

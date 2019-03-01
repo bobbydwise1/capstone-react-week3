@@ -1,15 +1,16 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
-import MoveHistory from './movehistory';
-import Gameboard from './gameboard';
-import CapturedBox from './capturedbox';
-import ChatBox from './chatbox';
+import MoveHistory from './MoveHistory';
+import Gameboard from './Gameboard';
+import CapturedBox from './CapturedBox';
+import ChatBox from './Chatbox';
 
 function GameRoute(){
   const compBox = {
     border: "solid yellow",
-    backgroundColor: "light yellow"
+    backgroundColor: "light yellow",
+    padding: "20px"
   }
 
   const gameBoardGrid = {

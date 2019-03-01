@@ -1,15 +1,20 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import * as math from 'mathjs';
+import PropTypes from 'prop-types';
 
-function MoveHistory(){
+function AboutRules() {
   const compBox = {
-    border: "solid green",
+    border: "blue",
     backgroundColor: "light yellow",
     padding: "20px"
   }
+
   return (
-    <h1 style={compBox}>MOVE HISTORY</h1>
+    <div style={compBox}>
+
+    </div>
   );
 }
 
-export default MoveHistory;
+export default AboutRules;

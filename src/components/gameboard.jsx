@@ -16,7 +16,8 @@ function createSquareGrid(n) {
 function Gameboard(){
   const compBox = {
     border: "solid blue",
-    backgroundColor: "light yellow"
+    backgroundColor: "light yellow",
+    padding: "20px"
   }
 
   const gridContainer = {

@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './Header';
-import MoveHistory from './movehistory';
-import Welcome from './welcome';
-import GameRoute from './gameroute';
+import MoveHistory from './MoveHistory';
+import Welcome from './Welcome';
+import GameRoute from './Gameroute';
+import AboutRules from './AboutRules';
 import Error404 from './Error404';
 import { Switch, Route, Link } from 'react-router-dom';
 
@@ -17,7 +18,8 @@ function App(){
   }
   const compBox = {
     border: "solid red",
-    backgroundColor: "light yellow"
+    backgroundColor: "light yellow",
+    padding: "20px"
   }
 
   return (
@@ -25,7 +27,8 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={Welcome}/>
-        <Route path='/gameroute' component={GameRoute}/>
+        <Route path='/GameRoute' component={GameRoute}/>
+        <Route path='/AboutRules' component={AboutRules}/>
         <Route component={Error404}/>
       </Switch>
     </div>
