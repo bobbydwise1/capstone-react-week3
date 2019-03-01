@@ -18,18 +18,16 @@ function AboutRules() {
     <div style={compBox}>
       <p>Reference Pieces:</p>
       <ul>
-      <li>♔</li>
-      <li>♕</li>
-      <li>♖</li>
-      <li>♗</li>
-      <li>♘</li>
-      <li>♙</li>
-      <li>♚</li>
-      <li>♛</li>
-      <li>♜</li>
-      <li>♝</li>
-      <li>♞</li>
-      <li>♟</li>
+      <li>♔ king</li>
+      <li>♕ queen</li>
+      <li>♖ rook</li>
+      <li>♗ bishop</li>
+      <li>♘ knight</li>
+      <li>♙ pawn</li>
+      <li>⚔ prince</li>
+      <li>🐘 elephant</li>
+      <li>☄ cannon</li>
+      <li>⚓ ship</li>
     </ul>
     </div>
   );
