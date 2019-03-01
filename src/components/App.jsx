@@ -5,8 +5,6 @@ import Welcome from './welcome';
 import GameRoute from './gameroute';
 import Error404 from './Error404';
 import { Switch, Route, Link } from 'react-router-dom';
-import MySampleImage from '../assets/images/testimage.png';
-import MyAnotherTestImage from '../assets/images/testwide.png';
 
 function App(){
   const topLineImageStyle = {
@@ -24,10 +22,6 @@ function App(){
 
   return (
     <div style={compBox}>
-      <div style={topLineImageStyle}>
-        <img src={MySampleImage} style={mainImageStyle}/>
-        <img src={MyAnotherTestImage} style={mainImageStyle}/>
-      </div>
       <Header/>
       <Switch>
         <Route exact path='/' component={Welcome}/>
