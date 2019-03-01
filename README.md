@@ -47,6 +47,8 @@ https://github.com/josdejong/mathjs
 
 * _Unlike a pure javascript array with nested array, the math.matrix() object provides additional methods to make it easier to apply matrix operations (aka apply Linear Algebra).  An example of the game state, as a 13x12 board, is given below in javascript:_
 
+**import * as math from 'mathjs';**
+
 **const gameSystem = math.matrix([
 [1,1,1,1,1,1,1,1,1,1,1,1,1],
 [1,0,0,0,0,0,0,0,0,0,0,0,1],
