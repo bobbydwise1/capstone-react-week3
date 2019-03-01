@@ -10,6 +10,10 @@ function AboutRules() {
     padding: "20px"
   }
 
+  const pieceRules = {
+    InfoPawn:
+  }
+
   return (
     <div style={compBox}>
 
