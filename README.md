@@ -17,15 +17,15 @@ http://history.chess.free.fr/tamerlane2.htm#Moves
 
 * _Clone the applications from github by going to the terminal window command line and typing:_
 
-$ git clone https://github.com/bobbydwise1/capstone-react-static.git
+**$ git clone https://github.com/bobbydwise1/capstone-react-static.git**
 
 * _After all the files have been copied, navigate to the project working directory.  Type the following:_
 
-$ npm install
+**$ npm install**
 
 * _Node Package Manager (npm) should automatically start downloading all required dependencies.  After all files have been downloaded, type the following:_
 
-$ npm run start
+**$ npm run start**
 
 * _The terminal window will run the server._
 
@@ -35,7 +35,31 @@ $ npm run start
 
 ## Initial Component Diagram
 ![Component Image](./src/assets/images/DiagramComp.png)
-* _Note: State should exist in the App Component (if there is no Redux.).
+* _Note: State should exist in the App Component (if there is no Redux.)._
+
+## Representation of UI state
+
+* _This project uses the math.js library, which is under Apache 2.0 license.  See the following links:_
+http://mathjs.org/
+https://github.com/josdejong/mathjs
+
+* _The game state is represented by a math.matrix() object, which is an object that represents a true matrix, that represents the game grid._
+
+* _Unlike a pure javascript array with nested array, the math.matrix() object provides additional methods to make it easier to apply matrix operations (aka apply Linear Algebra).  An example of the game state, as a 13x12 board, is given below in javascript:_
+
+**const gameSystem = math.matrix([
+[1,1,1,1,1,1,1,1,1,1,1,1,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,0,0,0,0,0,0,0,0,0,0,0,1],
+[1,1,1,1,1,1,1,1,1,1,1,1,1]
+]);**
 
 ## Minimum Viable Product
 
@@ -87,6 +111,13 @@ $ npm run start
 
 ### License
 
+Copyright (c) 2019 **_Robert Lee, Epicodus_**
 *This application is Licensed under the MIT software License agreement. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*
 
-Copyright (c) 2019 **_Robert Lee, Epicodus_**
+The mathjs library is copyright under Apache License 2.0 by **Jos de Jong**.  The math.js license in part reads:
+
+*Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.*
