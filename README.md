@@ -65,6 +65,8 @@ https://github.com/josdejong/mathjs
 [1,1,1,1,1,1,1,1,1,1,1,1,1]
 ]);**
 
+* _Each (Y,X) coordinate of the matrix will hold a string prepresenting a piece.  These arrays are also historical state slices of the game, which can be stored in sequence._
+
 ## Minimum Viable Product
 
 * _This is only a static layout, in preparation for React state elements._

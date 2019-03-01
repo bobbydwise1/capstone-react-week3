@@ -8,7 +8,16 @@ function MoveHistory(){
     padding: "20px"
   }
   return (
-    <h1 style={compBox}>MOVE HISTORY</h1>
+    <div style={compBox}>
+      <h1>MOVE HISTORY</h1>
+      <div style={compBox}>
+        <ol>
+          <li>Move 1</li>
+          <li>Move 2</li>
+          <li>Move 3</li>
+        </ol>
+      </div>
+    </div>
   );
 }
 
