@@ -33,6 +33,10 @@ $ npm run start
 
 * _To stop the application, return to the terminal window and enter the command CTRL+C.  If prompted for (Y/N), pick "Y".  Then close the user interface tab in your web browser._
 
+## Initial Component Diagram
+![Component Image](./src/assets/images/DiagramComp.png)
+* _Note: State should exist in the App Component (if there is no Redux.).
+
 ## Minimum Viable Product
 
 * _This is only a static layout, in preparation for React state elements._
