@@ -83,6 +83,8 @@ https://github.com/josdejong/mathjs
 
 ## Future features
 
+* _Add new game pieces: prince, camel, elephant, cannon, ship, gryphon.__
+
 * _Add turns, white only moves one piece, then black moves one piece… etc._
 
 * _Add game piece move checking to only allow pieces to move to a “legal” square._
