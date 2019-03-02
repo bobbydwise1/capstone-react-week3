@@ -21,62 +21,65 @@ class Gameboard extends React.Component {
     };
   }
 
-  const compBox = {
-    border: "solid blue",
-    backgroundColor: "light yellow",
-    padding: "20px"
-  }
 
-  const gridContainer = {
-    display: "grid",
-    height: "400px",
-    width: "520px",
-    gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
-    gridColumnGap: "0px",
-    gridRowGap: "0px",
-    backgroundColor: "light grey",
-    border: "solid darkGrey",
-    margin: "auto",
-  }
+  render() {
 
-  const gridItem = {
-    backgroundColor: "lightGrey",
-    border: "solid black",
-    broderWidth: "0px",
-    verticalAlign: "middle",
-    textAlign:  "center"
-  }
+    const compBox = {
+      border: "solid blue",
+      backgroundColor: "light yellow",
+      padding: "20px"
+    }
 
-  // const gameSystem = math.matrix([
-  //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-  //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
-  // ]);
+    const gridContainer = {
+      display: "grid",
+      height: "400px",
+      width: "520px",
+      gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
+      gridColumnGap: "0px",
+      gridRowGap: "0px",
+      backgroundColor: "light grey",
+      border: "solid darkGrey",
+      margin: "auto",
+    }
 
-  const gameSystem = math.matrix([
-    [1,1,1,1,1,1,1,1,1,1,1,1,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
-    [1,'♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
-    [1,'🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
-    [1,1,1,1,1,1,1,1,1,1,1,1,1],
-  ]);
+    const gridItem = {
+      backgroundColor: "lightGrey",
+      border: "solid black",
+      broderWidth: "0px",
+      verticalAlign: "middle",
+      textAlign:  "center"
+    }
 
-  //React method to render a grid via loop
-  render () {
+    // const gameSystem = math.matrix([
+    //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
+    //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
+    // ]);
+
+    const gameSystem = math.matrix([
+      [1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
+      [1,'♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
+      [1,'🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1],
+    ]);
+
+    //React method to render a grid via loop
+
     return (
       <div style={compBox}>
         <h1>GAMEBOBARD</h1>
@@ -242,5 +245,5 @@ class Gameboard extends React.Component {
 
     );
   }
-
+}
 export default Gameboard;

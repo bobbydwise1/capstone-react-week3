@@ -17,7 +17,7 @@ http://history.chess.free.fr/tamerlane2.htm#Moves
 
 * _Clone the applications from github by going to the terminal window command line and typing:_
 
-**$ git clone https://github.com/bobbydwise1/capstone-react-static.git**
+**$ git clone https://github.com/bobbydwise1/capstone-react-week1.git**
 
 * _After all the files have been copied, navigate to the project working directory.  Type the following:_
 
