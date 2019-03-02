@@ -39,8 +39,10 @@ http://history.chess.free.fr/tamerlane2.htm#Moves
 * _To stop the application, return to the terminal window and enter the command CTRL+C.  If prompted for (Y/N), pick "Y".  Then close the user interface tab in your web browser._
 
 ## Initial Component Diagram
+
 ![Component Image](./src/assets/images/DiagramComp.png)
-* _Note: State should exist in the App Component (if there is no Redux.)._
+
+* _Note: State should exist in the GameRoute Component (if there is no Redux.)._
 
 ## Representation of UI state
 
