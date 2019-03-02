@@ -13,11 +13,16 @@ http://history.chess.free.fr/tamerlane2.htm#Moves
 
 * _The ancient version of this game is much more complex and "bloody".  The modern rules attempt to slow the game down and add more strategy._
 
+* _Note!  There is a version of this project with pure static components.  The link to this site is:_
+
+**https://github.com/bobbydwise1/capstone-react-static.git**
+
 ## Setup/Installation Requirements
 
 * _Clone the applications from github by going to the terminal window command line and typing:_
 
 **$ git clone https://github.com/bobbydwise1/capstone-react-week1.git**
+
 
 * _After all the files have been copied, navigate to the project working directory.  Type the following:_
 
