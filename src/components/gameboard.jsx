@@ -38,6 +38,15 @@ class Gameboard extends React.Component {
       fontSize: "24pt"
     }
 
+    const gridOuter = {
+      backgroundColor: "darkGrey",
+      width: '50px',
+      height: '50px',
+      verticalAlign: "middle",
+      textAlign:  "center",
+      fontSize: "24pt"
+    }
+
     // const gameSystem = math.matrix([
     //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
     //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
@@ -53,19 +62,19 @@ class Gameboard extends React.Component {
     // ]);
 
     const gameSystem = math.matrix([
-      ['X','A','B','C','D','E','F','G','H','I','J','K',1],
-      ['11','🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
-      ['10','♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
-      ['9','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
-      ['8',0,0,0,0,0,0,0,0,0,0,0,1],
-      ['7',0,0,0,0,0,0,0,0,0,0,0,1],
-      ['6',0,0,0,0,0,0,0,0,0,0,0,1],
-      ['5',0,0,0,0,0,0,0,0,0,0,0,1],
-      ['4',0,0,0,0,0,0,0,0,0,0,0,1],
-      ['3','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
-      ['2','♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
-      ['1','🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
       [1,1,1,1,1,1,1,1,1,1,1,1,1],
+      [1,'🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
+      [1,'♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
+      [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,0,0,0,0,0,0,0,0,0,0,0,1],
+      [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
+      [1,'♖','♘','♗','⚓','⚔','♔','⚔','⚓','♗','♘','♖',1],
+      [1,'🐘',0,'⛰',0,'☄',0,'☄',0,'⛰',0,'🐘',1],
+      [1,1,1,1,1,1,1,1,1,1,1,1,1]
     ]);
 
     //React method to render a grid via loop
@@ -74,21 +83,21 @@ class Gameboard extends React.Component {
       <div style={compBox}>
         <p>gameboard</p>
          <div style={gridContainer}>
-           <div style={gridItem}>{gameSystem._data[0][0]}</div>
-           <div style={gridItem}>{gameSystem._data[0][1]}</div>
-           <div style={gridItem}>{gameSystem._data[0][2]}</div>
-           <div style={gridItem}>{gameSystem._data[0][3]}</div>
-           <div style={gridItem}>{gameSystem._data[0][4]}</div>
-           <div style={gridItem}>{gameSystem._data[0][5]}</div>
-           <div style={gridItem}>{gameSystem._data[0][6]}</div>
-           <div style={gridItem}>{gameSystem._data[0][7]}</div>
-           <div style={gridItem}>{gameSystem._data[0][8]}</div>
-           <div style={gridItem}>{gameSystem._data[0][9]}</div>
-           <div style={gridItem}>{gameSystem._data[0][10]}</div>
-           <div style={gridItem}>{gameSystem._data[0][11]}</div>
-           <div style={gridItem}>{gameSystem._data[0][12]}</div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}>A</div>
+           <div style={gridOuter}>B</div>
+           <div style={gridOuter}>C</div>
+           <div style={gridOuter}>D</div>
+           <div style={gridOuter}>E</div>
+           <div style={gridOuter}>F</div>
+           <div style={gridOuter}>G</div>
+           <div style={gridOuter}>H</div>
+           <div style={gridOuter}>I</div>
+           <div style={gridOuter}>J</div>
+           <div style={gridOuter}>K</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[1][0]}</div>
+           <div style={gridOuter}>1</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[1][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[1][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[1][3]}</button></div>
@@ -100,9 +109,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[1][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[1][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[1][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[1][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[2][0]}</div>
+           <div style={gridOuter}>2</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][3]}</button></div>
@@ -114,9 +123,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[2][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[3][0]}</div>
+           <div style={gridOuter}>3</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][3]}</button></div>
@@ -128,9 +137,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[3][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[4][0]}</div>
+           <div style={gridOuter}>4</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[4][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[4][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[4][3]}</button></div>
@@ -142,9 +151,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[4][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[4][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[4][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[4][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[5][0]}</div>
+           <div style={gridOuter}>5</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[5][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[5][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[5][3]}</button></div>
@@ -156,9 +165,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[5][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[5][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[5][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[5][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[6][0]}</div>
+           <div style={gridOuter}>6</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[6][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[6][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[6][3]}</button></div>
@@ -170,9 +179,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[6][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[6][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[6][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[6][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[7][0]}</div>
+           <div style={gridOuter}>7</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[7][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[7][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[7][3]}</button></div>
@@ -184,9 +193,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[7][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[7][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[7][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[7][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[8][0]}</div>
+           <div style={gridOuter}>8</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[8][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[8][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[8][3]}</button></div>
@@ -198,9 +207,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[8][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[8][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[8][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[8][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[9][0]}</div>
+           <div style={gridOuter}>9</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[9][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[9][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[9][3]}</button></div>
@@ -212,9 +221,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[9][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[9][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[9][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[9][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[10][0]}</div>
+           <div style={gridOuter}>10</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][3]}</button></div>
@@ -226,9 +235,9 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[10][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[11][0]}</div>
+           <div style={gridOuter}>11</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][1]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][2]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][3]}</button></div>
@@ -240,21 +249,21 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][11]}</button></div>
-           <div style={gridItem}>{gameSystem._data[11][12]}</div>
+           <div style={gridOuter}></div>
 
-           <div style={gridItem}>{gameSystem._data[12][0]}</div>
-           <div style={gridItem}>{gameSystem._data[12][1]}</div>
-           <div style={gridItem}>{gameSystem._data[12][2]}</div>
-           <div style={gridItem}>{gameSystem._data[12][3]}</div>
-           <div style={gridItem}>{gameSystem._data[12][4]}</div>
-           <div style={gridItem}>{gameSystem._data[12][5]}</div>
-           <div style={gridItem}>{gameSystem._data[12][6]}</div>
-           <div style={gridItem}>{gameSystem._data[12][7]}</div>
-           <div style={gridItem}>{gameSystem._data[12][8]}</div>
-           <div style={gridItem}>{gameSystem._data[12][9]}</div>
-           <div style={gridItem}>{gameSystem._data[12][10]}</div>
-           <div style={gridItem}>{gameSystem._data[12][11]}</div>
-           <div style={gridItem}>{gameSystem._data[12][12]}</div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
 
          </div>
 
