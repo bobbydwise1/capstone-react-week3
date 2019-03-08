@@ -3,6 +3,14 @@ import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 
+class Square extends React.Component {
+  render() {
+    return (
+      <div><button className="square" onClick={() => this.props.onClick()} style={this.gridItem}>{this.props.value}</button></div>
+    );
+  }
+}
+
 class Gameboard extends React.Component {
   constructor(props) {
     super(props);
@@ -26,15 +34,15 @@ class Gameboard extends React.Component {
   }
 
   handleClick(yPos,xPos) {
-    const gameSystem = this.state.gameSystem.slice();
+    const gameSystem = this.state.gameSystem._data.slice();
     gameSystem._data[yPos][xPos] = "X";
     this.setState({gameSystem: gameSystem});
   };
 
   renderSquare(yPos,xPos) {
     return (
-      <div style={gridItem}><button className="square" onClick={() => this.handleClick(yPos,xPos)} style={gridItem}>{this.state.gameSystem._data[yPos][xPos]}</button></div>
-    )
+      <Square value={this.state.gameSystem._data[yPos][xPos]} onClick={() => this.handleClick(yPos,xPos)}/>
+    );
   }
 
   render() {
@@ -73,38 +81,6 @@ class Gameboard extends React.Component {
       fontSize: "30pt"
     }
 
-    // const gameSystem = math.matrix([
-    //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
-    // ]);
-
-    // const gameSystem = math.matrix([
-    //   [1,1,1,1,1,1,1,1,1,1,1,1,1],
-    //   [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
-    //   [1,'♖','♘','♗','⚓','🤴','♔','🤴','⚓','♗','♘','♖',1],
-    //   [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,0,0,0,0,0,0,0,0,0,0,0,1],
-    //   [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
-    //   [1,'♖','♘','♗','⚓','🤴','♔','🤴','⚓','♗','♘','♖',1],
-    //   [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
-    //   [1,1,1,1,1,1,1,1,1,1,1,1,1]
-    // ]);
-
-    //React method to render a grid via loop
-
     return (
       <div style={compBox}>
          <div style={gridContainer}>
@@ -123,157 +99,157 @@ class Gameboard extends React.Component {
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>1</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[1][11]}</button></div>
+             {this.renderSquare(1,1)}
+             {this.renderSquare(1,2)}
+             {this.renderSquare(1,3)}
+             {this.renderSquare(1,4)}
+             {this.renderSquare(1,5)}
+             {this.renderSquare(1,6)}
+             {this.renderSquare(1,7)}
+             {this.renderSquare(1,8)}
+             {this.renderSquare(1,9)}
+             {this.renderSquare(1,10)}
+             {this.renderSquare(1,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>🏰</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[2][11]}</button></div>
+             {this.renderSquare(2,1)}
+             {this.renderSquare(2,2)}
+             {this.renderSquare(2,3)}
+             {this.renderSquare(2,4)}
+             {this.renderSquare(2,5)}
+             {this.renderSquare(2,6)}
+             {this.renderSquare(2,7)}
+             {this.renderSquare(2,8)}
+             {this.renderSquare(2,9)}
+             {this.renderSquare(2,10)}
+             {this.renderSquare(2,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>3</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[3][11]}</button></div>
+             {this.renderSquare(3,1)}
+             {this.renderSquare(3,2)}
+             {this.renderSquare(3,3)}
+             {this.renderSquare(3,4)}
+             {this.renderSquare(3,5)}
+             {this.renderSquare(3,6)}
+             {this.renderSquare(3,7)}
+             {this.renderSquare(3,8)}
+             {this.renderSquare(3,9)}
+             {this.renderSquare(3,10)}
+             {this.renderSquare(3,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>4</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[4][11]}</button></div>
+             {this.renderSquare(4,1)}
+             {this.renderSquare(4,2)}
+             {this.renderSquare(4,3)}
+             {this.renderSquare(4,4)}
+             {this.renderSquare(4,5)}
+             {this.renderSquare(4,6)}
+             {this.renderSquare(4,7)}
+             {this.renderSquare(4,8)}
+             {this.renderSquare(4,9)}
+             {this.renderSquare(4,10)}
+             {this.renderSquare(4,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>5</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[5][11]}</button></div>
+             {this.renderSquare(5,1)}
+             {this.renderSquare(5,2)}
+             {this.renderSquare(5,3)}
+             {this.renderSquare(5,4)}
+             {this.renderSquare(5,5)}
+             {this.renderSquare(5,6)}
+             {this.renderSquare(5,7)}
+             {this.renderSquare(5,8)}
+             {this.renderSquare(5,9)}
+             {this.renderSquare(5,10)}
+             {this.renderSquare(5,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>6</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[6][11]}</button></div>
+             {this.renderSquare(6,1)}
+             {this.renderSquare(6,2)}
+             {this.renderSquare(6,3)}
+             {this.renderSquare(6,4)}
+             {this.renderSquare(6,5)}
+             {this.renderSquare(6,6)}
+             {this.renderSquare(6,7)}
+             {this.renderSquare(6,8)}
+             {this.renderSquare(6,9)}
+             {this.renderSquare(6,10)}
+             {this.renderSquare(6,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>7</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[7][11]}</button></div>
+             {this.renderSquare(7,1)}
+             {this.renderSquare(7,2)}
+             {this.renderSquare(7,3)}
+             {this.renderSquare(7,4)}
+             {this.renderSquare(7,5)}
+             {this.renderSquare(7,6)}
+             {this.renderSquare(7,7)}
+             {this.renderSquare(7,8)}
+             {this.renderSquare(7,9)}
+             {this.renderSquare(7,10)}
+             {this.renderSquare(7,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>8</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[8][11]}</button></div>
+             {this.renderSquare(8,1)}
+             {this.renderSquare(8,2)}
+             {this.renderSquare(8,3)}
+             {this.renderSquare(8,4)}
+             {this.renderSquare(8,5)}
+             {this.renderSquare(8,6)}
+             {this.renderSquare(8,7)}
+             {this.renderSquare(8,8)}
+             {this.renderSquare(8,9)}
+             {this.renderSquare(8,10)}
+             {this.renderSquare(8,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>9</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[9][11]}</button></div>
+             {this.renderSquare(9,1)}
+             {this.renderSquare(9,2)}
+             {this.renderSquare(9,3)}
+             {this.renderSquare(9,4)}
+             {this.renderSquare(9,5)}
+             {this.renderSquare(9,6)}
+             {this.renderSquare(9,7)}
+             {this.renderSquare(9,8)}
+             {this.renderSquare(9,9)}
+             {this.renderSquare(9,10)}
+             {this.renderSquare(9,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}>10</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[10][11]}</button></div>
+             {this.renderSquare(10,1)}
+             {this.renderSquare(10,2)}
+             {this.renderSquare(10,3)}
+             {this.renderSquare(10,4)}
+             {this.renderSquare(10,5)}
+             {this.renderSquare(10,6)}
+             {this.renderSquare(10,7)}
+             {this.renderSquare(10,8)}
+             {this.renderSquare(10,9)}
+             {this.renderSquare(10,10)}
+             {this.renderSquare(10,11)}
            <div style={gridOuter}>🏰</div>
 
            <div style={gridOuter}>11</div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][1]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][2]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][3]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][4]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][5]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][6]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][7]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][8]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][9]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][10]}</button></div>
-           <div style={gridItem}><button className="square" onClick={() => this.handleClick(i)} style={gridItem}>{this.state.gameSystem._data[11][11]}</button></div>
+             {this.renderSquare(11,1)}
+             {this.renderSquare(11,2)}
+             {this.renderSquare(11,3)}
+             {this.renderSquare(11,4)}
+             {this.renderSquare(11,5)}
+             {this.renderSquare(11,6)}
+             {this.renderSquare(11,7)}
+             {this.renderSquare(11,8)}
+             {this.renderSquare(11,9)}
+             {this.renderSquare(11,10)}
+             {this.renderSquare(11,11)}
            <div style={gridOuter}></div>
 
            <div style={gridOuter}></div>
