@@ -3,16 +3,6 @@ import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 
-function createSquareGrid(n) {
-  let answer = [];
-  for (let y = 0; y < n; y++) {
-    for (let x = 0; x < n; x++) {
-      answer.push("<div class='grid-item'>",y,'-',x,"</div>")
-    }
-  }
-  return answer;
-}
-
 class Gameboard extends React.Component {
   constructor(props) {
     super(props);

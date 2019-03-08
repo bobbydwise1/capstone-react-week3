@@ -11,8 +11,6 @@ class GameRoute extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      this.gameSystem = {
-        game
 
       }
     }
