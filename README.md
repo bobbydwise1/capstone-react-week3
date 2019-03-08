@@ -2,6 +2,8 @@
 
 #### _This is a game that is a spin-off of chess.  This version of chess will use a bigger game board (bigger than 8x8), and will have more chess pieces that are different than the traditional chess pieces._
 
+_This specific repo is the 2nd week version of my capstone project for Epicodus._
+
 #### By _**Robert Lee**_
 
 ## Description
@@ -82,7 +84,7 @@ https://github.com/josdejong/mathjs
 
 * _There will at least be all the traditional chess piece graphics of pawn, rook, knight, bishop, queen, and king._
 
-* _When any piece is dragged anywhere else on the gameboard, it will erase any piece in the square, and then the piece will be moved there (ex: there is no checking the player if their moves are “legal” for that piece.)._
+* _A game piece is moved by left clicking on it once to first select it.  Then the player must select the destination square.  It will erase any piece in the square, and then the piece will be moved there (ex: there is no checking the player if their moves are “legal” for that piece.)._
 
 * _There are no “turns”.  Ex, it is possible for white or black to move 10 pieces in a row if they wanted._
 
@@ -90,13 +92,15 @@ https://github.com/josdejong/mathjs
 
 ## Future features
 
-* _Add new game pieces: prince, camel, elephant, cannon, ship, gryphon.__
+* _Add new game pieces: prince, camel, elephant, cannon, ship, gryphon._
 
 * _Add turns, white only moves one piece, then black moves one piece… etc._
 
 * _Add game piece move checking to only allow pieces to move to a “legal” square._
 
 * _Add a skinning feature to change the look of the game._
+
+* _Add an ability to drag and drop pieces, using libraries that can work with either a mouse or touchscreen._
 
 * _Refactor for React Native, to create an Andriod app._
 
