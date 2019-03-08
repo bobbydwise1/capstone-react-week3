@@ -6,7 +6,18 @@ import Gameboard from './Gameboard';
 import CapturedBox from './CapturedBox';
 import PropTypes from 'prop-types';
 
-function GameRoute(){
+class GameRoute extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      this.gameSystem = {
+        game
+
+      }
+    }
+  }
+
   const compBox = {
     border: "solid yellow",
     backgroundColor: "light yellow",
@@ -20,19 +31,28 @@ function GameRoute(){
     margin: "10px"
   }
 
-  return (
-    <div style={compBox}>
-      <h1>This is the GameRoute Component.</h1>
-      <div style={gameBoardGrid}>
-        <MoveHistory></MoveHistory>
-        <Gameboard></Gameboard>
-        <CapturedBox></CapturedBox>
+  render() {
+    return (
+      <div style={compBox}>
+        <h1>This is the GameRoute Component.</h1>
+        <div style={gameBoardGrid}>
+          <MoveHistory></MoveHistory>
+          <Gameboard></Gameboard>
+          <CapturedBox></CapturedBox>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
+GameRoute.propTypes = {
+  gameSystem: PropTypes.object
+};
 
-
+const mapStateToProps = state => {
+  return {
+    gameSystem: state.gameSystem
+  };
+};
 
 export default GameRoute;
