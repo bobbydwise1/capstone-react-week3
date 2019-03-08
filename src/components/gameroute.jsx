@@ -14,22 +14,20 @@ class GameRoute extends React.Component {
 
       }
     }
-  }
-
-  const compBox = {
-    border: "solid yellow",
-    backgroundColor: "light yellow",
-    padding: "20px"
-  }
-
-  const gameBoardGrid = {
-    display: "grid",
-    gridTemplateColumns: "1fr 2fr 1fr",
-    padding: "10px",
-    margin: "10px"
-  }
 
   render() {
+    const compBox = {
+      border: "solid yellow",
+      backgroundColor: "light yellow",
+      padding: "20px"
+    }
+
+    const gameBoardGrid = {
+      display: "grid",
+      gridTemplateColumns: "1fr 2fr 1fr",
+      padding: "10px",
+      margin: "10px"
+    }
     return (
       <div style={compBox}>
         <h1>This is the GameRoute Component.</h1>
