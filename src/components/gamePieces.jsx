@@ -6,7 +6,6 @@ function GamePieces(){
   const compBox = {
     border: "solid black",
     backgroundColor: "light yellow",
-    padding: "20px"
   };
 
   const GridElevenStyle = {

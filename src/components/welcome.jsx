@@ -5,7 +5,6 @@ function Welcome(){
   const compBox = {
     border: "solid black",
     backgroundColor: "lightYellow",
-    padding: "20px"
   }
 
   return (

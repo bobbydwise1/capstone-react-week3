@@ -7,7 +7,6 @@ function AboutRules() {
   const compBox = {
     border: "solid cyan",
     backgroundColor: "light yellow",
-    padding: "20px"
   }
 
   const pieceRules = { rules: [

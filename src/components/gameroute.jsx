@@ -19,7 +19,6 @@ class GameRoute extends React.Component {
     const compBox = {
       border: "solid yellow",
       backgroundColor: "light yellow",
-      padding: "20px"
     }
 
     const gameBoardGrid = {

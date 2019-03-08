@@ -4,7 +4,6 @@ import { Switch, Route, Link } from 'react-router-dom';
 function Error404(){
   const compBox = {
     border: "solid black",
-    padding: "20px"
   }
   return (
     <div style={compBox}>

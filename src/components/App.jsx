@@ -19,7 +19,6 @@ function App(){
   const compBox = {
     border: "solid red",
     backgroundColor: "light yellow",
-    padding: "20px"
   }
 
   return (

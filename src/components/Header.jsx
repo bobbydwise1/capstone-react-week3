@@ -5,7 +5,6 @@ function Header() {
   const compBox = {
     border: "solid orange",
     backgroundColor: "light yellow",
-    padding: "20px"
   }
 
   return (

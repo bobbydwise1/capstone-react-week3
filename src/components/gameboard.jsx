@@ -17,7 +17,6 @@ class Gameboard extends React.Component {
     const compBox = {
       border: "solid blue",
       backgroundColor: "light yellow",
-      padding: "20px"
     }
 
     const gridContainer = {
@@ -36,7 +35,7 @@ class Gameboard extends React.Component {
       height: '50px',
       verticalAlign: "middle",
       textAlign:  "center",
-      fontSize: "20pt"
+      fontSize: "24pt"
     }
 
     // const gameSystem = math.matrix([
@@ -73,8 +72,7 @@ class Gameboard extends React.Component {
 
     return (
       <div style={compBox}>
-        <h1>GAMEBOBARD</h1>
-
+        <p>gameboard</p>
          <div style={gridContainer}>
            <div style={gridItem}>{gameSystem._data[0][0]}</div>
            <div style={gridItem}>{gameSystem._data[0][1]}</div>

@@ -5,7 +5,6 @@ function MoveHistory(){
   const compBox = {
     border: "solid green",
     backgroundColor: "light yellow",
-    padding: "20px"
   }
   return (
     <div style={compBox}>
