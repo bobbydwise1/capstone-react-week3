@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 class Square extends React.Component {
   render() {
     return (
-      <div><button className="square" onClick={() => this.props.onClick()} style={this.gridItem}>{this.props.value}</button></div>
+      <button className="square" onClick={() => this.props.onClick()}>{this.props.value}</button>
     );
   }
 }
@@ -34,9 +34,10 @@ class Gameboard extends React.Component {
   }
 
   handleClick(yPos,xPos) {
-    const gameSystem = this.state.gameSystem._data.slice();
-    gameSystem._data[yPos][xPos] = "X";
-    this.setState({gameSystem: gameSystem});
+    const temp = this.state.gameSystem
+    temp._data[yPos][xPos] = "X";
+    console.log("new square: ", temp, temp._data[yPos][xPos])
+    this.setState({gameSystem: temp});
   };
 
   renderSquare(yPos,xPos) {
