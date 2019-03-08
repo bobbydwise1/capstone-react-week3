@@ -23,16 +23,16 @@ class GameRoute extends React.Component {
 
     const gameBoardGrid = {
       display: "grid",
-      gridTemplateColumns: "1fr 2fr 1fr",
+      gridTemplateColumns: "1fr",
       padding: "10px",
       margin: "10px"
     }
     return (
       <div style={compBox}>
-        <h1>This is the GameRoute Component.</h1>
+        <p>GameRoute Component</p>
         <div style={gameBoardGrid}>
-          <MoveHistory></MoveHistory>
           <Gameboard></Gameboard>
+          <MoveHistory></MoveHistory>
           <CapturedBox></CapturedBox>
         </div>
       </div>
