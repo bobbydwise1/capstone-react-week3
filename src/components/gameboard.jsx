@@ -25,7 +25,7 @@ class Gameboard extends React.Component {
       gridColumnGap: "0px",
       gridRowGap: "0px",
       backgroundColor: "light grey",
-      border: "solid darkGrey",
+      border: "solid grey",
       margin: "auto",
     }
 
@@ -81,7 +81,6 @@ class Gameboard extends React.Component {
 
     return (
       <div style={compBox}>
-        <p>gameboard</p>
          <div style={gridContainer}>
            <div style={gridOuter}></div>
            <div style={gridOuter}>A</div>
@@ -123,7 +122,7 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[2][11]}</button></div>
-           <div style={gridOuter}></div>
+           <div style={gridOuter}>🏰</div>
 
            <div style={gridOuter}>3</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[3][1]}</button></div>
@@ -235,7 +234,7 @@ class Gameboard extends React.Component {
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][9]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][10]}</button></div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[10][11]}</button></div>
-           <div style={gridOuter}></div>
+           <div style={gridOuter}>🏰</div>
 
            <div style={gridOuter}>11</div>
            <div style={gridItem}><button style={gridItem}>{gameSystem._data[11][1]}</button></div>
@@ -253,15 +252,15 @@ class Gameboard extends React.Component {
 
            <div style={gridOuter}></div>
            <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
-           <div style={gridOuter}></div>
+           <div style={gridOuter}>G</div>
+           <div style={gridOuter}>A</div>
+           <div style={gridOuter}>M</div>
+           <div style={gridOuter}>E</div>
+           <div style={gridOuter}>B</div>
+           <div style={gridOuter}>O</div>
+           <div style={gridOuter}>A</div>
+           <div style={gridOuter}>R</div>
+           <div style={gridOuter}>D</div>
            <div style={gridOuter}></div>
            <div style={gridOuter}></div>
 

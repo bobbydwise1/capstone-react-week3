@@ -16,7 +16,7 @@ function AboutRules() {
     {id: 3, pieceName: "bishop", info: "Just like the modern bishop.  It moves and captures diagonally.", symbol: "♗"},
     {id: 4, pieceName: "knight", info: "Just like the modern knight.  It flies over in a L-shape.  We note the L-shape is 1-over, 2-up box.", symbol: "♘"},
     {id: 5, pieceName: "pawn", info: "Just like the modern pawn.  On it\'s starting square, it can move 1, or 2 moves forward.  It only moves 1 square vertically forward.  It only captures 1 square diagonally forward.  See additional rules.", symbol: "♙"},
-    {id: 6, pieceName: "prince", info: "This is a new piece.  It moves like a king.  However, it is for the most part, a normal game piece.  See additional rules.", symbol: "⚔"},
+    {id: 6, pieceName: "prince", info: "This is a new piece.  It moves like a king.  However, it is for the most part, a normal game piece.  See additional rules.", symbol: "🤴"},
     {id: 7, pieceName: "camel", info: "Think of this piece as a super-knight.  It moves in an L-shape, but the L-shape is 1-over, 3-up box", symbol: "🐫"},
     {id: 8, pieceName: "elephant", info: "This is a hybird of bishop and knight.  It moves diagonally 1 or 2 squares.  If it moves 2 diagonal squares, it can jump over any piece on the 1-diagonal.", symbol: "🐘"},
     {id: 9, pieceName: "cannon", info: "This piece is kind of like a rook.  It you are not capturing any piece, you can move horizontally and vertically as far as you want as long as you are unobstructed.  However, if you are capturing an enemy piece, you must jump over only 1 piece, friendly or not.", symbol: "🔫"},
@@ -46,10 +46,10 @@ function AboutRules() {
       <li>♗ bishop</li>
       <li>♘ knight</li>
       <li>♙ pawn</li>
-      <li>⚔ prince</li>
-      <li>⛰ camel</li>
+      <li>🤴 prince</li>
+      <li>🐫 camel</li>
       <li>🐘 elephant</li>
-      <li>☄ cannon</li>
+      <li>🔫 cannon</li>
       <li>⚓ ship</li>
     </ul>
     </div>
