@@ -4,6 +4,7 @@ import * as math from 'mathjs';
 import MoveHistory from './MoveHistory';
 import Gameboard from './Gameboard';
 import CapturedBox from './CapturedBox';
+import PropTypes from 'prop-types';
 
 function GameRoute(){
   const compBox = {
