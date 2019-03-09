@@ -4,6 +4,10 @@
 
 _This specific repo is the 2nd week version of my capstone project for Epicodus._
 
+_If you want to see the 1st week version of this repo, see the following link:_
+
+https://github.com/bobbydwise1/capstone-react-week1.git
+
 #### By _**Robert Lee**_
 
 ## Description
@@ -23,7 +27,7 @@ http://history.chess.free.fr/tamerlane2.htm#Moves
 
 * _Clone the applications from github by going to the terminal window command line and typing:_
 
-**$ git clone https://github.com/bobbydwise1/capstone-react-week1.git**
+**$ git clone https://github.com/bobbydwise1/capstone-react-week2.git**
 
 
 * _After all the files have been copied, navigate to the project working directory.  Type the following:_
@@ -78,19 +82,28 @@ https://github.com/josdejong/mathjs
 
 ## Minimum Viable Product
 
-* _This is only a static layout, in preparation for React state elements._
+* _This gameBoard component has had state lifted into it._
 
-* _There will be a game board of no bigger than 13x13, with a set of black game pieces and white game pieces._
+* _The visible game grid is a 10 x 11 grid._
 
 * _There will at least be all the traditional chess piece graphics of pawn, rook, knight, bishop, queen, and king._
 
-* _A game piece is moved by left clicking on it once to first select it.  Then the player must select the destination square.  It will erase any piece in the square, and then the piece will be moved there (ex: there is no checking the player if their moves are “legal” for that piece.)._
+* _To move a game piece, it will compose of two actions:_
 
-* _There are no “turns”.  Ex, it is possible for white or black to move 10 pieces in a row if they wanted._
+  * _1st action:  The user left clicks on the piece they want to move._
+  * _2nd action:  The user left clicks on a square they want to move to._
+    * _If the new square is inside the game grid, the user's piece will be moved into the new square._
+    * _If any piece exists in the new square, it will be over written._
+    * _MVP will not have "legal" moves checking._
+
+
+* _For MVP, there are no “turns”.  Ex, it is possible for white or black to move 10 pieces in a row if they wanted._
 
 * _A captured pieces window component._
 
 ## Future features
+
+* _Add a moves history list._
 
 * _Add new game pieces: prince, camel, elephant, cannon, ship, gryphon._
 
@@ -101,6 +114,8 @@ https://github.com/josdejong/mathjs
 * _Add a skinning feature to change the look of the game._
 
 * _Add an ability to drag and drop pieces, using libraries that can work with either a mouse or touchscreen._
+
+* _Refactor the game state to only use a 1-dimensional array to speed up the game._
 
 * _Refactor for React Native, to create an Andriod app._
 
