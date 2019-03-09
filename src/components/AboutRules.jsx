@@ -21,7 +21,7 @@ function AboutRules() {
     {id: 8, pieceName: "elephant", info: "This is a hybird of bishop and knight.  It moves diagonally 1 or 2 squares.  If it moves 2 diagonal squares, it can jump over any piece on the 1-diagonal.", symbol: "🐘"},
     {id: 9, pieceName: "cannon", info: "This piece is kind of like a rook.  It you are not capturing any piece, you can move horizontally and vertically as far as you want as long as you are unobstructed.  However, if you are capturing an enemy piece, you must jump over only 1 piece, friendly or not.", symbol: "🔫"},
     {id: 10, pieceName: "ship", info: "This is a hybird of a knight and rook.  To move, it must go 1 square diagonally, but has no restriction on vertical movement.  The ship can\'t capture on the 1-square diagonal movement.  The ship can\'t jump over pieces like a knight.  This has almost the same power as a rook.", symbol: "⚓"},
-    {id: 11, pieceName: "gryphon", info: "This is a super-ship.  It moves like the ship, however, it can do it in the horizontal axis as well.  It has the same 1-square diagonal capture restriction as the ship.  Like the ship, the gryphon can\'t jump over pieces like a knight.  This piece has almost the same power as a queen.", symbol: "S⚓S"}
+    {id: 11, pieceName: "gryphon", info: "This is a super-ship.  It moves like the ship, however, it can do it in the horizontal axis as well.  It has the same 1-square diagonal capture restriction as the ship.  Like the ship, the gryphon can\'t jump over pieces like a knight.  This piece has almost the same power as a queen.", symbol: "🦄"}
     ]
   };
 
@@ -40,17 +40,18 @@ function AboutRules() {
     <div style={compBox}>
       <p>Reference Pieces:</p>
       <ul>
-      <li>♔ king</li>
-      <li>♕ queen</li>
-      <li>♖ rook</li>
-      <li>♗ bishop</li>
-      <li>♘ knight</li>
-      <li>♙ pawn</li>
-      <li>🤴 prince</li>
-      <li>🐫 camel</li>
-      <li>🐘 elephant</li>
-      <li>🔫 cannon</li>
-      <li>⚓ ship</li>
+      <li><h1>{pieceRules.rules[0].symbol} {pieceRules.rules[0].pieceName}</h1> <p>{pieceRules.rules[0].info}</p></li>
+      <li><h1>{pieceRules.rules[1].symbol} {pieceRules.rules[1].pieceName}</h1> <p>{pieceRules.rules[1].info}</p></li>
+      <li><h1>{pieceRules.rules[2].symbol} {pieceRules.rules[2].pieceName}</h1> <p>{pieceRules.rules[2].info}</p></li>
+      <li><h1>{pieceRules.rules[3].symbol} {pieceRules.rules[3].pieceName}</h1> <p>{pieceRules.rules[3].info}</p></li>
+      <li><h1>{pieceRules.rules[4].symbol} {pieceRules.rules[4].pieceName}</h1> <p>{pieceRules.rules[4].info}</p></li>
+      <li><h1>{pieceRules.rules[5].symbol} {pieceRules.rules[5].pieceName}</h1> <p>{pieceRules.rules[5].info}</p></li>
+      <li><h1>{pieceRules.rules[6].symbol} {pieceRules.rules[6].pieceName}</h1> <p>{pieceRules.rules[6].info}</p></li>
+      <li><h1>{pieceRules.rules[7].symbol} {pieceRules.rules[7].pieceName}</h1> <p>{pieceRules.rules[7].info}</p></li>
+      <li><h1>{pieceRules.rules[8].symbol} {pieceRules.rules[8].pieceName}</h1> <p>{pieceRules.rules[8].info}</p></li>
+      <li><h1>{pieceRules.rules[9].symbol} {pieceRules.rules[9].pieceName}</h1> <p>{pieceRules.rules[9].info}</p></li>
+      <li><h1>{pieceRules.rules[10].symbol} {pieceRules.rules[10].pieceName}</h1> <p>{pieceRules.rules[10].info}</p></li>
+      <li><h1>{pieceRules.rules[11].symbol} {pieceRules.rules[11].pieceName}</h1> <p>{pieceRules.rules[11].info}</p></li>
     </ul>
     </div>
   );

@@ -6,7 +6,15 @@ import PropTypes from 'prop-types';
 class Square extends React.Component {
   render() {
     return (
-      <button className="square" onClick={() => this.props.onClick()}>{this.props.value}</button>
+      <button style={{
+        backgroundColor: "lightGrey",
+        width: '60px',
+        height: '60px',
+        verticalAlign: "middle",
+        textAlign:  "center",
+        fontSize: "30pt"
+      }}
+      className="square" onClick={() => this.props.onClick()}>{this.props.value}</button>
     );
   }
 }
@@ -15,6 +23,7 @@ class Gameboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      moveHistory: {},
       gameSystem: math.matrix([
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
@@ -35,10 +44,17 @@ class Gameboard extends React.Component {
 
   handleClick(yPos,xPos) {
     const temp = this.state.gameSystem
-    temp._data[yPos][xPos] = "X";
-    console.log("new square: ", temp, temp._data[yPos][xPos])
+    console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
+    this.handleClick2(yPos,xPos,temp._data[yPos][xPos])
+    temp._data[yPos][xPos] = 0;
     this.setState({gameSystem: temp});
   };
+
+  handleClick2(yPos,xPos,value) {
+    console.log("you made it to 2nd handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + value);
+    console.log("pick a new square to move your piece");
+    //TO-DO:  need to complete the rest of this
+  }
 
   renderSquare(yPos,xPos) {
     return (
