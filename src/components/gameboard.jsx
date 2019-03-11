@@ -51,10 +51,11 @@ class Gameboard extends React.Component {
     let tempY = this.state.currentSelectedPieceYPos;
     let tempX = this.state.currentSelectedPieceXPos;
     var tempPiece = temp._data[yPos][xPos];
-    console.log("system state before handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
+    console.log("system state BEFORE handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
     console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
     temp._data[yPos][xPos] = 0;
-    this.setState({gameSystem: temp});
+    this.setState({_data: temp, currentSelectedPieceYPos: tempY, currentSelectedPieceXPos: tempX});
+    console.log("system state AFTER handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
   };
 
   renderSquare(yPos,xPos) {
