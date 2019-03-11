@@ -1,18 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from './Header';
-import MoveHistory from './MoveHistory';
 import Welcome from './Welcome';
 import GameRoute from './Gameroute';
 import AboutRules from './AboutRules';
 import Error404 from './Error404';
-import { Switch, Route, Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+
+let action;
 
 class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      gameSystem: this.state.gameSystem
+      gameSystem: gameSystem,
     };
   }
 
@@ -33,10 +35,10 @@ class App extends React.Component{
       <div style={compBox}>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><Welcome currentRouterPath={props.location.pathname}/>} />
-          <Route path='/GameRoute' render={()=><GameRoute gameSystem={this.props.gameSystem}/>} currentRouterPath={props.location.pathname} />
-          <Route path='/AboutRules' render={()=><AboutRules/>} currentRouterPath={props.location.pathname}/>
-          <Route render={()=><Error404/>} />
+          <Route exact path='/' render={ () => <Welcome currentRouterPath={props.location.pathname}/>} />
+          <Route path='/GameRoute' render={ () => <GameRoute gameSystem={this.props.gameSystem} />} currentRouterPath={props.location.pathname} />
+          <Route path='/AboutRules' render={ () => <AboutRules/>} currentRouterPath={props.location.pathname} />
+        <Route component={Error404}/>} />
         </Switch>
       </div>
     );

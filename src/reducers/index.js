@@ -1,5 +1,5 @@
-import gameSystemReducer from './gameSystemreducer';
 import { combineReducers } from 'redux';
+import gameSystemReducer from './game-System-Reducer';
 
 const rootReducer = combineReducers({
   gameSystem: gameSystemReducer,

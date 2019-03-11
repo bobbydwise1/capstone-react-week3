@@ -76,12 +76,12 @@ function GamePieces(){
   ]); //note does not initially appear in game.  Pawn promots to queen on last rank, prince promotes to queen on 9th rank.
 
   return (
-    <h1 style={compBox}>Gamepieces</h1>
-      <div>
-        <div><h1>1</h1></div>
-        <div><h1>2</h1></div>
-        <div><h1>3</h1></div>
-      </div>
+    <div  style={compBox}>
+      <h1>Gamepieces</h1>
+      <div><h1>1</h1></div>
+      <div><h1>2</h1></div>
+      <div><h1>3</h1></div>
+    </div>
   );
 }
 

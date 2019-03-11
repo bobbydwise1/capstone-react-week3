@@ -7,8 +7,8 @@ function ChatBox(){
     border: "solid violet",
   }
   return (
-    <div>
-    <h1 style={compBox}>CHATBOX</h1>
+    <div style={compBox}>
+      <h1 style={compBox}>CHATBOX</h1>
     </div>
   );
 }
