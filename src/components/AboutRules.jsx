@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 function AboutRules() {
   const compBox = {
@@ -57,4 +58,4 @@ function AboutRules() {
   );
 }
 
-export default AboutRules;
+export default connect()(AboutRules);

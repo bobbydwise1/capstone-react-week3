@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
+import { connect } from 'react-redux';
 
 function TestMathJS(){
   const compBox = {
@@ -19,4 +20,4 @@ function TestMathJS(){
   )
 }
 
-export default TestMathJS;
+export default connect()(TestMathJS);

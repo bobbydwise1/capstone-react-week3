@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function CapturedBox(){
   const compBox = {
@@ -10,4 +11,4 @@ function CapturedBox(){
   );
 }
 
-export default CapturedBox;
+export default connect()(CapturedBox);

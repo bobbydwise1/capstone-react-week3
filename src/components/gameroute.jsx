@@ -5,6 +5,7 @@ import MoveHistory from './MoveHistory';
 import Gameboard from './Gameboard';
 import CapturedBox from './CapturedBox';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class GameRoute extends React.Component {
 
@@ -50,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default GameRoute;
+export default connect()(GameRoute);

@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class Square extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class Square extends React.Component {
 class Gameboard extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       moveHistory: {},
       currentPlayerOneTurn: true, //true is player 1 turn, false is player 2 turn
@@ -47,10 +49,10 @@ class Gameboard extends React.Component {
   }
 
   handleClick(yPos,xPos,pieceValue) {
-    const temp = this.state.gameSystem;
-    const tempY = this.state.currentSelectedPieceYPos;
-    const tempX = this.state.currentSelectedPieceXPos;
-    const tempPiece = this.state.currentSelectedPieceValue;
+    var temp = this.state.gameSystem;
+    var tempY = this.state.currentSelectedPieceYPos;
+    var tempX = this.state.currentSelectedPieceXPos;
+    var tempPiece = this.state.currentSelectedPieceValue;
     console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
     tempY = yPos;
     tempX = xPos;
@@ -58,9 +60,10 @@ class Gameboard extends React.Component {
     this.setState({currentSelectedPieceYPos: tempY});
     this.setState({currentSelectedPieceXPos: tempX});
     this.setState({currentSelectedPieceValue: tempPiece});
-    console.log("System State is: (ypos,xpos,data): " + this.currentSelectedPieceYPos + " | " + this.currentSelectedPieceXPos + " | " + this.currentSelectedPieceValue);
+    console.log("System pick State is: (ypos,xpos,data): " + this.currentSelectedPieceYPos + " | " + this.currentSelectedPieceXPos + " | " + this.currentSelectedPieceValue);
     temp._data[yPos][xPos] = 0;  //Change the selected square into a zero
     this.setState({gameSystem: temp});
+    console.log("gameBoard state is: ", this.gameSystem);
   };
 
   renderSquare(yPos,xPos) {
@@ -297,4 +300,4 @@ class Gameboard extends React.Component {
     );
   }
 }
-export default Gameboard;
+export default connect()(Gameboard);

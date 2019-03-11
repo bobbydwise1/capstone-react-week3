@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
+import { connect } from 'react-redux';
 
 function GamePieces(){
   const compBox = {
@@ -84,4 +85,4 @@ function GamePieces(){
   );
 }
 
-export default GamePieces;
+export default connect()(GamePieces);

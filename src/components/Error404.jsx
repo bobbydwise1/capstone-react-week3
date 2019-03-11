@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function Error404(){
   const compBox = {
@@ -13,4 +14,4 @@ function Error404(){
   );
 }
 
-export default Error404;
+export default connect()(Error404);

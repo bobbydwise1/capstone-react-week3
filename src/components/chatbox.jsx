@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function ChatBox(){
   const compBox = {
@@ -12,4 +13,4 @@ function ChatBox(){
   );
 }
 
-export default ChatBox;
+export default connect()(ChatBox);

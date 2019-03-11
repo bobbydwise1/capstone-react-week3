@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function Welcome(){
   const compBox = {
@@ -16,4 +17,4 @@ function Welcome(){
   );
 }
 
-export default Welcome;
+export default connect()(Welcome);

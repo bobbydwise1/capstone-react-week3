@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function MoveHistory(){
   const compBox = {
@@ -20,4 +21,4 @@ function MoveHistory(){
   );
 }
 
-export default MoveHistory;
+export default connect()(MoveHistory);

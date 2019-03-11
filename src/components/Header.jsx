@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function Header() {
   const compBox = {
@@ -16,4 +17,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default connect()(Header);
