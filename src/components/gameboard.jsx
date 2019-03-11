@@ -3,6 +3,8 @@ import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 
+let action; //required for reducer functionality.  this must have the .type property assigned
+
 class Square extends React.Component {
   render() {
     return (
@@ -18,6 +20,8 @@ class Square extends React.Component {
     );
   }
 }
+
+
 
 class Gameboard extends React.Component {
   constructor(props) {
@@ -54,8 +58,11 @@ class Gameboard extends React.Component {
     console.log("system state BEFORE handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
     console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
     temp._data[yPos][xPos] = 0;
-    this.setState({_data: temp, currentSelectedPieceYPos: tempY, currentSelectedPieceXPos: tempX});
-    console.log("system state AFTER handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
+    this.setState({currentSelectedPieceYPos: tempY});
+    this.setState({currentSelectedPieceXPos: tempX});
+    this.setState({currentSelectedPieceValue: tempPiece});
+    this.setState({_data: temp});
+    console.log("system state AFTER handle: (ypos,xpos,tempPiece,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.currentSelectedPieceValue +  " | "+ this.state.gameSystem);
   };
 
   renderSquare(yPos,xPos) {
