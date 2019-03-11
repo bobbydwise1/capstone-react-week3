@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function MoveHistory(){
@@ -21,4 +21,4 @@ function MoveHistory(){
   );
 }
 
-export default connect()(MoveHistory);
+export default withRouter(connect()(MoveHistory));

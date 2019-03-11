@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function Welcome(){
@@ -17,4 +17,4 @@ function Welcome(){
   );
 }
 
-export default connect()(Welcome);
+export default withRouter(connect()(Welcome));

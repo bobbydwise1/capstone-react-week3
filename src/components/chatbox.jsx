@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function ChatBox(){
@@ -13,4 +13,4 @@ function ChatBox(){
   );
 }
 
-export default connect()(ChatBox);
+export default withRouter(connect()(ChatBox));

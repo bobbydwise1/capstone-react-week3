@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -58,4 +58,4 @@ function AboutRules() {
   );
 }
 
-export default connect()(AboutRules);
+export default withRouter(connect()(AboutRules));

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function Error404(){
@@ -14,4 +14,4 @@ function Error404(){
   );
 }
 
-export default connect()(Error404);
+export default withRouter(connect()(Error404));

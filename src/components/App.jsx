@@ -5,7 +5,7 @@ import Welcome from './Welcome';
 import GameRoute from './Gameroute';
 import AboutRules from './AboutRules';
 import Error404 from './Error404';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function App(){
@@ -35,4 +35,5 @@ function App(){
   );
 }
 
-export default connect()(App);
+
+export default withRouter(connect()(App));

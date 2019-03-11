@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function Header() {
@@ -17,4 +17,4 @@ function Header() {
   );
 }
 
-export default connect()(Header);
+export default withRouter(connect()(Header));

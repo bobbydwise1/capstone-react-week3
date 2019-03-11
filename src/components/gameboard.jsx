@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -300,4 +300,15 @@ class Gameboard extends React.Component {
     );
   }
 }
-export default connect()(Gameboard);
+
+GameBoard.propTypes = {
+  gameSystem: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    gameSystem: state.gameSystem
+  };
+};
+
+export default withRouter(connect()(Gameboard));

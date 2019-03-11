@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import * as math from 'mathjs';
 import MoveHistory from './MoveHistory';
 import Gameboard from './Gameboard';
@@ -51,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect()(GameRoute);
+export default withRouter(connect()(GameRoute));

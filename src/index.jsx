@@ -6,9 +6,15 @@ import { HashRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import rootReducer from './reducers/gameSystem';
 
 document.body.style.backgroundColor = 'OldLace';
-const store = createStore(rootReducer);
+
+const store = createStore(rootReducer);  //Required for createStore
+
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+);
 
 const render = (Component) => {
   ReactDOM.render(
@@ -24,6 +30,7 @@ const render = (Component) => {
 };
 
 render(App);
+
 /*eslint-disable */
 if (module.hot) {
   module.hot.accept('./components/App', () => {
