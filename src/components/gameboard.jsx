@@ -24,6 +24,10 @@ class Gameboard extends React.Component {
     super(props);
     this.state = {
       moveHistory: {},
+      currentPlayerOneTurn: true,
+      currentSelectedPieceValue: 0,
+      currentSelectedPieceYPos: null,
+      currentSelectedPieceXPos: null,
       gameSystem: math.matrix([
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
@@ -43,18 +47,15 @@ class Gameboard extends React.Component {
   }
 
   handleClick(yPos,xPos) {
-    const temp = this.state.gameSystem
+    let temp = this.state.gameSystem;
+    let tempY = this.state.currentSelectedPieceYPos;
+    let tempX = this.state.currentSelectedPieceXPos;
+    var tempPiece = temp._data[yPos][xPos];
+    console.log("system state before handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
     console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
-    this.handleClick2(yPos,xPos,temp._data[yPos][xPos])
     temp._data[yPos][xPos] = 0;
     this.setState({gameSystem: temp});
   };
-
-  handleClick2(yPos,xPos,value) {
-    console.log("you made it to 2nd handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + value);
-    console.log("pick a new square to move your piece");
-    //TO-DO:  need to complete the rest of this
-  }
 
   renderSquare(yPos,xPos) {
     return (
