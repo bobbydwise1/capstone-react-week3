@@ -75,7 +75,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'Chess Variant',
+      title: 'chess-variant',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]

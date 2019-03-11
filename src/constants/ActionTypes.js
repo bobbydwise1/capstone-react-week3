@@ -1,0 +1,1 @@
+export const PICK_PIECE2MOVE = 'NEXT_LYRIC';
