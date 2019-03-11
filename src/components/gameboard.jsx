@@ -24,6 +24,10 @@ class Gameboard extends React.Component {
     super(props);
     this.state = {
       moveHistory: {},
+      currentPlayerOneTurn: true, //true is player 1 turn, false is player 2 turn
+      currentSelectedPieceValue: 0,
+      currentSelectedPieceYPos: null,
+      currentSelectedPieceXPos: null,
       gameSystem: math.matrix([
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
@@ -42,19 +46,22 @@ class Gameboard extends React.Component {
     };
   }
 
-  handleClick(yPos,xPos) {
-    const temp = this.state.gameSystem
+  handleClick(yPos,xPos,pieceValue) {
+    const temp = this.state.gameSystem;
+    const tempY = this.state.currentSelectedPieceYPos;
+    const tempX = this.state.currentSelectedPieceXPos;
+    const tempPiece = this.state.currentSelectedPieceValue;
     console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
-
-
+    tempY = yPos;
+    tempX = xPos;
+    tempPiece = temp._data[yPos][xPos];
+    this.setState({currentSelectedPieceYPos: tempY});
+    this.setState({currentSelectedPieceXPos: tempX});
+    this.setState({currentSelectedPieceValue: tempPiece});
+    console.log("System State is: (ypos,xpos,data): " + this.currentSelectedPieceYPos + " | " + this.currentSelectedPieceXPos + " | " + this.currentSelectedPieceValue);
+    temp._data[yPos][xPos] = 0;  //Change the selected square into a zero
+    this.setState({gameSystem: temp});
   };
-
-  handleClick2(yPos,xPos,value) {
-    console.log("you made it to 2nd handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + value);
-    console.log("pick a new square to move your piece");
-        temp._data[yPos][xPos] = 0;
-        this.setState({gameSystem: temp});
-  }
 
   renderSquare(yPos,xPos) {
     return (
