@@ -311,4 +311,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(connect()(Gameboard));
+export default withRouter(connect(mapStateToProps)(Gameboard));

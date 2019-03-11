@@ -85,4 +85,4 @@ function GamePieces(){
   );
 }
 
-export default withRouter(connect()(GamePieces));
+export default withRouter(connect(mapStateToProps)(GamePieces));

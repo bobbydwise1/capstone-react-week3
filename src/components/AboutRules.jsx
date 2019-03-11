@@ -58,4 +58,4 @@ function AboutRules() {
   );
 }
 
-export default withRouter(connect()(AboutRules));
+export default withRouter(connect(mapStateToProps)(AboutRules));

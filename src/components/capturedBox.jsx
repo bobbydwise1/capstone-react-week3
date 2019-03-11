@@ -11,4 +11,4 @@ function CapturedBox(){
   );
 }
 
-export default withRouter(connect()(CapturedBox));
+export default withRouter(connect(mapStateToProps)(CapturedBox));

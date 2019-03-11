@@ -51,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(connect()(GameRoute));
+export default withRouter(connect(mapStateToProps)(GameRoute));

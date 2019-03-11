@@ -20,4 +20,4 @@ function TestMathJS(){
   )
 }
 
-export default withRouter(connect()(TestMathJS));
+export default withRouter(connect(mapStateToProps)(TestMathJS));

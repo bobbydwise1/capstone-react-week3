@@ -6,9 +6,8 @@ import { HashRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers/gameSystem';
-
-document.body.style.backgroundColor = 'OldLace';
+import gameSystemReducer from './reducers/gameSystemReducer';
+import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer);  //Required for createStore
 
@@ -16,15 +15,17 @@ let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 );
 
+document.body.style.backgroundColor = 'OldLace';
+
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <HashRouter>
-          <Provider store={store}>
-            <Component/>
-          </Provider>
-      </HashRouter>
-    </AppContainer>,
+    <HashRouter>
+      <Provider store={store}>
+        <AppContainer>
+          <Component/>
+        </AppContainer>
+      </Provider>
+    </HashRouter>,
     document.getElementById('react-app-root')
   );
 };

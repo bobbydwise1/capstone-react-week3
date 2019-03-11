@@ -21,4 +21,4 @@ function MoveHistory(){
   );
 }
 
-export default withRouter(connect()(MoveHistory));
+export default withRouter(connect(mapStateToProps)(MoveHistory));

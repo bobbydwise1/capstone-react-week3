@@ -17,4 +17,4 @@ function Header() {
   );
 }
 
-export default withRouter(connect()(Header));
+export default withRouter(connect(mapStateToProps)(Header));

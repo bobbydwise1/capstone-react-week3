@@ -17,4 +17,4 @@ function Welcome(){
   );
 }
 
-export default withRouter(connect()(Welcome));
+export default withRouter(connect(mapStateToProps)(Welcome));

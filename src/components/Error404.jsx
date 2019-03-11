@@ -14,4 +14,4 @@ function Error404(){
   );
 }
 
-export default withRouter(connect()(Error404));
+export default withRouter(connect(mapStateToProps)(Error404));

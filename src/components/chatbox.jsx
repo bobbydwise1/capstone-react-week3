@@ -13,4 +13,4 @@ function ChatBox(){
   );
 }
 
-export default withRouter(connect()(ChatBox));
+export default withRouter(connect(mapStateToProps)(ChatBox));
