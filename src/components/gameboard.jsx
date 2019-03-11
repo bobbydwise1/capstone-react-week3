@@ -3,7 +3,6 @@ import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 
-let action; //required for reducer functionality.  this must have the .type property assigned
 
 class Square extends React.Component {
   render() {
@@ -50,18 +49,17 @@ class Gameboard extends React.Component {
     };
   }
 
+//TO DO - need to add reducer to make the code follow react principals
+
   handleClick(yPos,xPos) {
-    let temp = this.state.gameSystem;
-    let tempY = this.state.currentSelectedPieceYPos;
-    let tempX = this.state.currentSelectedPieceXPos;
-    var tempPiece = temp._data[yPos][xPos];
-    console.log("system state BEFORE handle: (ypos,xpos,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.gameSystem);
-    console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
+    let temp = this.state;
+    let temp.currentSelectedPieceYPos = yPos;
+    let temp.currentSelectedPieceXPos = xPos;
+    var temp.tempPiece = temp._data[yPos][xPos];
+    console.log("system state BEFORE handle: (ypos,xpos,data): " + this.currentSelectedPieceYPos + " | " + this.currentSelectedPieceXPos + " | " + this.gameSystem);
+    console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp.gameSystem._data[yPos][xPos]);
     temp._data[yPos][xPos] = 0;
-    this.setState({currentSelectedPieceYPos: tempY});
-    this.setState({currentSelectedPieceXPos: tempX});
-    this.setState({currentSelectedPieceValue: tempPiece});
-    this.setState({_data: temp});
+    this.setState({state: temp});  //bad place to update State
     console.log("system state AFTER handle: (ypos,xpos,tempPiece,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.currentSelectedPieceValue +  " | "+ this.state.gameSystem);
   };
 
