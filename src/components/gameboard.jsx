@@ -45,15 +45,15 @@ class Gameboard extends React.Component {
   handleClick(yPos,xPos) {
     const temp = this.state.gameSystem
     console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp._data[yPos][xPos]);
-    this.handleClick2(yPos,xPos,temp._data[yPos][xPos])
-    temp._data[yPos][xPos] = 0;
-    this.setState({gameSystem: temp});
+
+
   };
 
   handleClick2(yPos,xPos,value) {
     console.log("you made it to 2nd handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + value);
     console.log("pick a new square to move your piece");
-    //TO-DO:  need to complete the rest of this
+        temp._data[yPos][xPos] = 0;
+        this.setState({gameSystem: temp});
   }
 
   renderSquare(yPos,xPos) {
@@ -103,15 +103,15 @@ class Gameboard extends React.Component {
          <div style={gridContainer}>
            <div style={gridOuter}></div>
            <div style={gridOuter}></div>
-           <div style={gridOuter}>G</div>
-           <div style={gridOuter}>A</div>
-           <div style={gridOuter}>M</div>
-           <div style={gridOuter}>E</div>
-           <div style={gridOuter}>B</div>
-           <div style={gridOuter}>O</div>
-           <div style={gridOuter}>A</div>
-           <div style={gridOuter}>R</div>
-           <div style={gridOuter}>D</div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
+           <div style={gridOuter}></div>
            <div style={gridOuter}></div>
            <div style={gridOuter}></div>
 
