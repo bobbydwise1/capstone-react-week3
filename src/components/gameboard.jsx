@@ -2,6 +2,8 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import PropTypes from 'prop-types';
+import MoveHistory from './MoveHistory';
+import CapturedBox from './CapturedBox';
 
 
 class Square extends React.Component {
@@ -304,7 +306,8 @@ class Gameboard extends React.Component {
            <div style={gridOuter}></div>
 
          </div>
-
+         <MoveHistory moveNumber={this.state.currentMoveNumber}></MoveHistory>
+         <CapturedBox></CapturedBox>
       </div>
 
     );

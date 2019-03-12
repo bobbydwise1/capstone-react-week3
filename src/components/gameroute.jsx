@@ -2,8 +2,6 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
 import Gameboard from './Gameboard';
-import MoveHistory from './MoveHistory';
-import CapturedBox from './CapturedBox';
 import PropTypes from 'prop-types';
 
 class GameRoute extends React.Component {
@@ -33,8 +31,6 @@ class GameRoute extends React.Component {
         <p>GameRoute Component</p>
         <div style={gameBoardGrid}>
           <Gameboard ></Gameboard>
-          <MoveHistory></MoveHistory>
-          <CapturedBox></CapturedBox>
         </div>
       </div>
     );

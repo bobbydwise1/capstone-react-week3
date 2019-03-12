@@ -7,7 +7,7 @@ class MoveHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      moveNumber: null
+
     };
   }
 
@@ -26,7 +26,7 @@ class MoveHistory extends React.Component {
 
     return (
       <div style={compBox}>
-        <h1>MOVE HISTORY: Current Turn Number: {this.state.moveNumber}</h1>
+        <h1>MOVE HISTORY: Current Turn Number: {this.props.moveNumber}</h1>
         <div style={compBox}>
           <ol>
             <li>Move 1</li>
