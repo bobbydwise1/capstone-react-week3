@@ -26,7 +26,7 @@ class Gameboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      moveHistory: {},
+      moveHistory: [],
       currentPlayerOneTurn: true,
       currentSelectedPieceValue: 0,
       currentSelectedPieceYPos: null,
@@ -54,6 +54,7 @@ class Gameboard extends React.Component {
 
   handleClick(yPos,xPos) {
     let temp = this.state
+    console.log("----CLICK START----")
     console.log("What is temp? : " + JSON.stringify(temp));
     console.log("What is state before CLICK? :" + JSON.stringify(this.state))
     if (temp.currentlyMovingAPiece === false) {
@@ -65,6 +66,7 @@ class Gameboard extends React.Component {
       console.log("AGAIN: What is temp? : " + JSON.stringify(temp));
       temp.gameSystem._data[temp.currentSelectedPieceYPos][temp.currentSelectedPieceXPos] = 0;
       temp.gameSystem._data[yPos][xPos] = temp.currentSelectedPieceValue;
+      temp.moveHistory.push({pieceMoved: temp.currentSelectedPieceValue, from: [temp.currentSelectedPieceYPos, temp.currentSelectedPieceXPos], to: [yPos, xPos]})
       temp.currentSelectedPieceYPos = null;
       temp.currentSelectedPieceXPos = null;
       temp.currentSelectedPieceValue = 0;
@@ -73,6 +75,7 @@ class Gameboard extends React.Component {
     console.log("CLICK 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp.gameSystem);
     this.setState({state: temp})
     console.log("system state AFTER handle: (entire ojject): " + JSON.stringify(this.state));
+    console.log("----CLICK END----")
   };
 
   renderSquare(yPos,xPos) {
