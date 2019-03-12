@@ -31,6 +31,7 @@ class Gameboard extends React.Component {
       currentSelectedPieceValue: 0,
       currentSelectedPieceYPos: null,
       currentSelectedPieceXPos: null,
+      currentlyMovingAPiece: false,
       gameSystem: math.matrix([
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
         [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
@@ -55,12 +56,21 @@ class Gameboard extends React.Component {
     let temp = this.state
     console.log("What is temp? : " + JSON.stringify(temp));
     console.log("What is state before CLICK? :" + JSON.stringify(this.state))
-    temp.currentSelectedPieceYPos = yPos;
-    temp.currentSelectedPieceXPos = xPos;
-    temp.currentSelectedPieceValue = this.state.gameSystem._data[yPos][xPos];
-    console.log("AGAIN: What is temp? : " + JSON.stringify(temp));
+    if (temp.currentlyMovingAPiece === false) {
+      temp.currentSelectedPieceYPos = yPos;
+      temp.currentSelectedPieceXPos = xPos;
+      temp.currentSelectedPieceValue = this.state.gameSystem._data[yPos][xPos];
+      temp.currentlyMovingAPiece = true;
+    } else {
+      console.log("AGAIN: What is temp? : " + JSON.stringify(temp));
+      temp.gameSystem._data[temp.currentSelectedPieceYPos][temp.currentSelectedPieceXPos] = 0;
+      temp.gameSystem._data[yPos][xPos] = temp.currentSelectedPieceValue;
+      temp.currentSelectedPieceYPos = null;
+      temp.currentSelectedPieceXPos = null;
+      temp.currentSelectedPieceValue = 0;
+      temp.currentlyMovingAPiece = false;
+    }
     console.log("CLICK 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp.gameSystem);
-    temp.gameSystem._data[yPos][xPos] = 0;
     this.setState({state: temp})
     console.log("system state AFTER handle: (entire ojject): " + JSON.stringify(this.state));
   };
