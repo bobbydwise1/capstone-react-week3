@@ -21,7 +21,7 @@ function AboutRules() {
     {id: 8, points: 250, pieceName: "Elephant", info: "This is a hybird of bishop and knight.  It moves diagonally 1 or 2 squares.  If it moves 2 diagonal squares, it can jump over any piece on the 1-diagonal.  Another way to think of the elephant is it\'s a knight that can hop over to 1 diagonal or 2 diagonals, instead of a L-shape.", symbol: "🐘"},
     {id: 9, points: 490, pieceName: "Cannon", info: "This piece is kind of like a rook.  It you are not capturing any piece, you can move horizontally and vertically as far as you want as long as you are unobstructed.  However, if you are capturing an enemy piece, you must jump over only 1 piece, friendly or not.", symbol: "🔫"},
     {id: 10, points: 440, pieceName: "Ship", info: "This is a hybird of a knight and rook.  To move, it must go 1 square diagonally, but has no restriction on vertical movement.  The ship can\'t capture on the 1-square diagonal movement.  The ship can\'t jump over pieces like a knight.  This has almost the same power as a rook.", symbol: "⚓"},
-    {id: 11, points: 770, pieceName: "Gryphon", info: "This is a super-ship.  It moves like the ship, however, it can do it in the horizontal axis as well.  It has the same 1-square diagonal capture restriction as the ship.  Like the ship, the gryphon can\'t jump over pieces like a knight.  This piece has almost the same power as a queen.  Note that a normal game does not start with any gryphons.  (And yes, I know the picture is of a unicorn.)", symbol: "🦄"}
+    {id: 11, points: 770, pieceName: "Gryphon", info: "This is a super-ship.  It moves like the ship, however, it can do it in the horizontal axis as well.  It has the same 1-square diagonal capture restriction as the ship.  Like the ship, the gryphon can\'t jump over pieces like a knight.  This piece has almost the same power as a queen.  Note that a normal game does not start with any gryphons.", symbol: "🦅"}
     ]
   };
 
@@ -31,8 +31,8 @@ function AboutRules() {
     {id: 2, ruleName: "♔ ♖ No Castling", info: "This does not exist in this variant."},
     {id: 3, ruleName: "♙ ♕ Pawn Promotion to Queen", info: "Pawns promote only to queens when they reach the other side of the game board."},
     {id: 4, ruleName: "🤴 ♕ Prince Promotion to Queen", info: "When the prince reaches the opponent\'s pawn\'s row, they prince is promoted to queen.  Endgame queens typically spell doom for the oppossing player."},
-    {id: 5, ruleName: "⚓ 🦄 Ship Promotion to Gryphon", info: "If a ship reaches the opponent\'s side of the game board, it is promoted to gryphon.  Likewise, endgame gryphons typically spell doom for the other player."},
-    {id: 6, ruleName: "♕ 🦄 Wild Tamerlame Chess (variant)", info: "If the Tamerlame Chess 2000 rules are considered to slow of a game pace, then consider creating a different initial setup where the princes are replaced by queens, and ships replaced by gryphons.  Since there are no more princes, King\'s Succession is void."},
+    {id: 5, ruleName: "⚓ 🦅 Ship Promotion to Gryphon", info: "If a ship reaches the opponent\'s side of the game board, it is promoted to gryphon.  Likewise, endgame gryphons typically spell doom for the other player."},
+    {id: 6, ruleName: "♕ 🦅 Wild Tamerlame Chess (variant)", info: "If the Tamerlame Chess 2000 rules are considered to slow of a game pace, then consider creating a different initial setup where the princes are replaced by queens, and ships replaced by gryphons.  Since there are no more princes, King\'s Succession is void."},
     {id: 7, ruleName: "🏰 Ancient Citadel", info: "This square does not do anything on this version of the game."}
     ]
   };

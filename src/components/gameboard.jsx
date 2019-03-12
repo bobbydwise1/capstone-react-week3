@@ -54,8 +54,8 @@ class Gameboard extends React.Component {
 
   handleClick(yPos,xPos) {
     let temp = this.state
-    console.log("----CLICK START----")
-    console.log("What is temp? : " + JSON.stringify(temp));
+    console.log("----CLICK START----MOVE # ",this.state.currentMoveNumber)
+    // console.log("What is temp? : " + JSON.stringify(temp));
     if (temp.currentlyMovingAPiece === false) {
       temp.currentSelectedPieceYPos = yPos;
       temp.currentSelectedPieceXPos = xPos;
@@ -72,8 +72,8 @@ class Gameboard extends React.Component {
       temp.currentlyMovingAPiece = false;
     }
     this.setState({state: temp.state})
-    console.log("system state AFTER handle: " + JSON.stringify(this.state));
-    console.log("----CLICK END----")
+    // console.log("system state AFTER handle: " + JSON.stringify(this.state));
+    console.log("----CLICK END----MOVE # ",this.state.currentMoveNumber)
   };
 
   renderSquare(yPos,xPos) {
@@ -310,4 +310,6 @@ class Gameboard extends React.Component {
     );
   }
 }
+
+
 export default Gameboard;

@@ -1,31 +1,42 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import * as math from 'mathjs';
 import PropTypes from 'prop-types';
 
-function MoveHistory(props){
-  const compBox = {
-    border: "solid green",
-    backgroundColor: "light yellow",
+class MoveHistory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      moveNumber: null
+    };
   }
 
-  console.log("What is MoveHistory.props? :" + JSON.stringify(props))
+  render() {
+    const compBox = {
+      border: "solid green",
+      backgroundColor: "light yellow",
+    }
 
-  return (
-    <div style={compBox}>
-      <h1>MOVE HISTORY: Current Turn Number: {props.currentMoveNumber}</h1>
+    console.log("What is this? :" + this.state)
+    console.log("What is this? JSON :" + JSON.stringify(this.state))
+
+    const dummyTest = {
+      moveNumber: 222
+    }
+
+    return (
       <div style={compBox}>
-        <ol>
-          <li>Move 1</li>
-          <li>Move 2</li>
-          <li>Move 3</li>
-        </ol>
+        <h1>MOVE HISTORY: Current Turn Number: {this.state.moveNumber}</h1>
+        <div style={compBox}>
+          <ol>
+            <li>Move 1</li>
+            <li>Move 2</li>
+            <li>Move 3</li>
+          </ol>
+        </div>
       </div>
-    </div>
-  );
-}
-
-MoveHistory.propTypes = {
-  currentMovesObject: PropTypes.object
+    );
+  }
 }
 
 export default MoveHistory;
