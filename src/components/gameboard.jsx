@@ -310,6 +310,9 @@ class Gameboard extends React.Component {
     );
   }
 }
+// GameBoard.propTypes = {
+//   entireState: PropTypes.object
+// };
 
 
 export default Gameboard;

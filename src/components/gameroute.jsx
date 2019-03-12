@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import * as math from 'mathjs';
-import MoveHistory from './MoveHistory';
 import Gameboard from './Gameboard';
+import MoveHistory from './MoveHistory';
 import CapturedBox from './CapturedBox';
 import PropTypes from 'prop-types';
 
@@ -12,8 +12,9 @@ class GameRoute extends React.Component {
     super(props);
     this.state = {
 
-      }
-    }
+    };
+    // this.handleAddingGameState = this.handleAddingGameState.bind(this);
+  }
 
   render() {
     const compBox = {
@@ -31,7 +32,7 @@ class GameRoute extends React.Component {
       <div style={compBox}>
         <p>GameRoute Component</p>
         <div style={gameBoardGrid}>
-          <Gameboard></Gameboard>
+          <Gameboard ></Gameboard>
           <MoveHistory></MoveHistory>
           <CapturedBox></CapturedBox>
         </div>
@@ -40,14 +41,14 @@ class GameRoute extends React.Component {
   }
 }
 
-GameRoute.propTypes = {
-  gameSystem: PropTypes.object
-};
-
-const mapStateToProps = state => {
-  return {
-    gameSystem: state.gameSystem
-  };
-};
+// GameRoute.propTypes = {
+//   gameSystem: PropTypes.object
+// };
+//
+// const mapStateToProps = state => {
+//   return {
+//     gameSystem: state.gameSystem
+//   };
+// };
 
 export default GameRoute;
