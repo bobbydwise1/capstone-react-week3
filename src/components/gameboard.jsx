@@ -306,7 +306,7 @@ class Gameboard extends React.Component {
            <div style={gridOuter}></div>
 
          </div>
-         <MoveHistory moveNumber={this.state.currentMoveNumber}></MoveHistory>
+         <MoveHistory moveNumber={this.state.currentMoveNumber} moveHistory={this.state.moveHistory}></MoveHistory>
          <CapturedBox></CapturedBox>
       </div>
 
