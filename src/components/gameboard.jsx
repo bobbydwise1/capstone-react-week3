@@ -52,7 +52,9 @@ class Gameboard extends React.Component {
 //TO DO - need to add reducer to make the code follow react principals
 
   handleClick(yPos,xPos) {
-    let temp = this.state;
+    let temp = this.state.slice();
+    console.log("What is temp? :" + temp);
+
     let temp.currentSelectedPieceYPos = yPos;
     let temp.currentSelectedPieceXPos = xPos;
     var temp.tempPiece = temp._data[yPos][xPos];
