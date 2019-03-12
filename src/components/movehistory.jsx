@@ -12,7 +12,7 @@ function MoveHistory(props){
 
   return (
     <div style={compBox}>
-      <h1>MOVE HISTORY: Current Turn Number: {Object.keys(JSON.stringify(props))}</h1>
+      <h1>MOVE HISTORY: Current Turn Number: {props.currentMoveNumber}</h1>
       <div style={compBox}>
         <ol>
           <li>Move 1</li>
