@@ -9,11 +9,11 @@ class Square extends React.Component {
     return (
       <button style={{
         backgroundColor: "lightGrey",
-        width: '60px',
-        height: '60px',
+        width: '70px',
+        height: '70px',
         verticalAlign: "middle",
         textAlign:  "center",
-        fontSize: "30pt"
+        fontSize: "32pt"
       }}
       className="square" onClick={() => this.props.onClick()}>{this.props.value}</button>
     );
@@ -27,6 +27,8 @@ class Gameboard extends React.Component {
     super(props);
     this.state = {
       moveHistory: [],
+      currentMoveNumber: 1,
+      capturedPieces: [],
       currentPlayerOneTurn: true,
       currentSelectedPieceValue: 0,
       currentSelectedPieceYPos: null,
@@ -50,31 +52,27 @@ class Gameboard extends React.Component {
     };
   }
 
-//TO DO - need to add reducer to make the code follow react principals
-
   handleClick(yPos,xPos) {
     let temp = this.state
     console.log("----CLICK START----")
     console.log("What is temp? : " + JSON.stringify(temp));
-    console.log("What is state before CLICK? :" + JSON.stringify(this.state))
     if (temp.currentlyMovingAPiece === false) {
       temp.currentSelectedPieceYPos = yPos;
       temp.currentSelectedPieceXPos = xPos;
       temp.currentSelectedPieceValue = this.state.gameSystem._data[yPos][xPos];
       temp.currentlyMovingAPiece = true;
     } else {
-      console.log("AGAIN: What is temp? : " + JSON.stringify(temp));
       temp.gameSystem._data[temp.currentSelectedPieceYPos][temp.currentSelectedPieceXPos] = 0;
       temp.gameSystem._data[yPos][xPos] = temp.currentSelectedPieceValue;
-      temp.moveHistory.push({pieceMoved: temp.currentSelectedPieceValue, from: [temp.currentSelectedPieceYPos, temp.currentSelectedPieceXPos], to: [yPos, xPos]})
+      temp.moveHistory.push({moveId: temp.currentMoveNumber, pieceMoved: temp.currentSelectedPieceValue, from: [temp.currentSelectedPieceYPos, temp.currentSelectedPieceXPos], to: [yPos, xPos]})
       temp.currentSelectedPieceYPos = null;
       temp.currentSelectedPieceXPos = null;
       temp.currentSelectedPieceValue = 0;
+      temp.currentMoveNumber++;
       temp.currentlyMovingAPiece = false;
     }
-    console.log("CLICK 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp.gameSystem);
-    this.setState({state: temp})
-    console.log("system state AFTER handle: (entire ojject): " + JSON.stringify(this.state));
+    this.setState({state: temp.state})
+    console.log("system state AFTER handle: " + JSON.stringify(this.state));
     console.log("----CLICK END----")
   };
 
@@ -93,7 +91,7 @@ class Gameboard extends React.Component {
 
     const gridContainer = {
       display: "grid",
-      maxWidth: "780px",
+      maxWidth: "910px",
       gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
       gridColumnGap: "0px",
       gridRowGap: "0px",
@@ -104,20 +102,20 @@ class Gameboard extends React.Component {
 
     const gridItem = {
       backgroundColor: "lightGrey",
-      width: '60px',
-      height: '60px',
+      width: '70px',
+      height: '70px',
       verticalAlign: "middle",
       textAlign:  "center",
-      fontSize: "30pt"
+      fontSize: "32pt"
     }
 
     const gridOuter = {
       backgroundColor: "darkGrey",
-      width: '60px',
-      height: '60px',
+      width: '70px',
+      height: '70px',
       verticalAlign: "middle",
       textAlign:  "center",
-      fontSize: "30pt"
+      fontSize: "32pt"
     }
 
     return (

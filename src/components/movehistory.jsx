@@ -1,14 +1,18 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function MoveHistory(){
+function MoveHistory(props){
   const compBox = {
     border: "solid green",
     backgroundColor: "light yellow",
   }
+
+  console.log("What is MoveHistory.props? :" + JSON.stringify(props))
+
   return (
     <div style={compBox}>
-      <h1>MOVE HISTORY</h1>
+      <h1>MOVE HISTORY: Current Turn Number: {Object.keys(JSON.stringify(props))}</h1>
       <div style={compBox}>
         <ol>
           <li>Move 1</li>
@@ -18,6 +22,10 @@ function MoveHistory(){
       </div>
     </div>
   );
+}
+
+MoveHistory.propTypes = {
+  currentMovesObject: PropTypes.object
 }
 
 export default MoveHistory;
