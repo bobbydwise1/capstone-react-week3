@@ -52,17 +52,17 @@ class Gameboard extends React.Component {
 //TO DO - need to add reducer to make the code follow react principals
 
   handleClick(yPos,xPos) {
-    let temp = this.state.slice();
-    console.log("What is temp? :" + temp);
-
-    let temp.currentSelectedPieceYPos = yPos;
-    let temp.currentSelectedPieceXPos = xPos;
-    var temp.tempPiece = temp._data[yPos][xPos];
-    console.log("system state BEFORE handle: (ypos,xpos,data): " + this.currentSelectedPieceYPos + " | " + this.currentSelectedPieceXPos + " | " + this.gameSystem);
-    console.log("you made it to 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp.gameSystem._data[yPos][xPos]);
-    temp._data[yPos][xPos] = 0;
-    this.setState({state: temp});  //bad place to update State
-    console.log("system state AFTER handle: (ypos,xpos,tempPiece,data): " + this.state.currentSelectedPieceYPos + " | " + this.state.currentSelectedPieceXPos + " | " + this.state.currentSelectedPieceValue +  " | "+ this.state.gameSystem);
+    let temp = this.state
+    console.log("What is temp? : " + JSON.stringify(temp));
+    console.log("What is state before CLICK? :" + JSON.stringify(this.state))
+    temp.currentSelectedPieceYPos = yPos;
+    temp.currentSelectedPieceXPos = xPos;
+    temp.currentSelectedPieceValue = this.state.gameSystem._data[yPos][xPos];
+    console.log("AGAIN: What is temp? : " + JSON.stringify(temp));
+    console.log("CLICK 1st handle: (ypos,xpos,data): " + yPos + " | " + xPos + " | " + temp.gameSystem);
+    temp.gameSystem._data[yPos][xPos] = 0;
+    this.setState({state: temp})
+    console.log("system state AFTER handle: (entire ojject): " + JSON.stringify(this.state));
   };
 
   renderSquare(yPos,xPos) {
