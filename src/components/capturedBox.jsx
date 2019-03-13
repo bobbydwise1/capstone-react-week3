@@ -1,12 +1,14 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 
-function CapturedBox(){
+function CapturedBox(props){
   const compBox = {
     border: "solid indigo",
   }
   return (
-    <h1 style={compBox}>CAPTURED BOX</h1>
+    <div style={compBox}>
+      <h1>CAPTURED BOX: {props.capturedPieces}</h1>
+    </div>
   );
 }
 

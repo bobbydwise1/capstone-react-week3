@@ -80,6 +80,7 @@ class Gameboard extends React.Component {
       temp.currentSelectedPieceValue = this.state.gameSystem._data[yPos][xPos];
       temp.currentlyMovingAPiece = true;
     } else {
+      if (temp.gameSystem._data[yPos][xPos] != "") {temp.capturedPieces.push(temp.gameSystem._data[yPos][xPos])}
       temp.gameSystem._data[temp.currentSelectedPieceYPos][temp.currentSelectedPieceXPos] = '';
       temp.gameSystem._data[yPos][xPos] = temp.currentSelectedPieceValue;
       temp.moveHistory.push({moveId: temp.currentMoveNumber, pieceMoved: temp.currentSelectedPieceValue, from: [temp.currentSelectedPieceYPos, temp.currentSelectedPieceXPos], to: [yPos, xPos]})
@@ -90,7 +91,7 @@ class Gameboard extends React.Component {
       temp.currentlyMovingAPiece = false;
     }
     this.setState({state: temp.state})
-    // console.log("system state AFTER handle: " + JSON.stringify(this.state));
+    console.log("system state AFTER handle: " + JSON.stringify(this.state));
     console.log("----CLICK END----MOVE # ",this.state.currentMoveNumber)
   };
 
@@ -308,17 +309,17 @@ class Gameboard extends React.Component {
            <div style={gridOuter}></div>
 
            <div style={gridOuter}></div>
-           <div style={gridOuter}>A</div>
-           <div style={gridOuter}>B</div>
-           <div style={gridOuter}>C</div>
-           <div style={gridOuter}>D</div>
-           <div style={gridOuter}>E</div>
-           <div style={gridOuter}>F</div>
-           <div style={gridOuter}>G</div>
-           <div style={gridOuter}>H</div>
-           <div style={gridOuter}>I</div>
-           <div style={gridOuter}>J</div>
-           <div style={gridOuter}>K</div>
+           <div style={gridOuter}>1</div>
+           <div style={gridOuter}>2</div>
+           <div style={gridOuter}>3</div>
+           <div style={gridOuter}>4</div>
+           <div style={gridOuter}>5</div>
+           <div style={gridOuter}>6</div>
+           <div style={gridOuter}>7</div>
+           <div style={gridOuter}>8</div>
+           <div style={gridOuter}>9</div>
+           <div style={gridOuter}>10</div>
+           <div style={gridOuter}>11</div>
            <div style={gridOuter}></div>
 
          </div>
@@ -326,7 +327,9 @@ class Gameboard extends React.Component {
            currentMoveNumber={this.state.currentMoveNumber}
            moveHistory={this.state.moveHistory}
          />
-       <CapturedBox />
+         <CapturedBox
+           capturedPieces={this.state.capturedPieces}
+           />
       </div>
 
     );

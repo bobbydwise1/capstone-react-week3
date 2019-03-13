@@ -10,7 +10,7 @@ function MoveHistory(props) {
     backgroundColor: "light yellow",
   }
 
-  console.log("What is JSON.stringify(props)? :" + JSON.stringify(props))
+  // console.log("What is JSON.stringify(props)? :" + JSON.stringify(props))
 
   return (
     <div style={compBox}>
