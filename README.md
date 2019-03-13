@@ -1,8 +1,6 @@
 # _Tamerlane Chess 2000._
 
-#### _This is a game that is a spin-off of chess.  This version of chess will use a bigger game board, and will have more chess pieces that are different than the traditional chess pieces._
-
-_This specific repo is the 3rd week version of my capstone project for Epicodus._
+#### _This is a game that is a spin-off of an ancestor of Modern Chess.  This has bigger game board, and has more unique game pieces that are different than the traditional chess pieces._
 
 #### By _**Robert Lee**_
 
@@ -14,7 +12,7 @@ _A variant of chess, created in React._
 
 **http://history.chess.free.fr/tamerlane2.htm#Moves**
 
-* _The ancient version of this game is much more complex and "bloody".  The modern rules attempt to slow the game down and add more strategy._
+* _The ancient version of this game is much more complex and "bloody".  It is called Tamerlane chess.  The year 2000 rules attempt to slow the ancient game down and add more strategy._
 
 * _The game is named after the medieval Persian conqueror, Amir Timur, aka Timur the Lame, aka Tamerlane.  See the following Wikipedia article for more information:_
 
@@ -30,7 +28,7 @@ _A variant of chess, created in React._
 
 * _Clone the applications from github by going to the terminal window command line and typing:_
 
-**$ git clone https://github.com/bobbydwise1/capstone-react-week2.git**
+**$ git clone https://github.com/bobbydwise1/capstone-react-week3.git**
 
 
 * _After all the files have been copied, navigate to the project working directory.  Type the following:_
@@ -51,15 +49,15 @@ _A variant of chess, created in React._
 
 ![Component Image](./src/assets/images/DiagramComp.png)
 
-* _Note: State should exist in the GameRoute Component (if there is no Redux.)._
+* _Note: State should exist in the GameRoute Component (there is no Redux.)._
 
 ## Representation of UI state
 
 * _This project uses the math.js library, which is under Apache 2.0 license.  See the following links:_
 
-http://mathjs.org/
+**http://mathjs.org/**
 
-https://github.com/josdejong/mathjs
+**https://github.com/josdejong/mathjs**
 
 * _The game state is represented by a math.matrix() object, which is an object that represents a true matrix, that represents the game grid._
 
@@ -104,35 +102,36 @@ https://github.com/josdejong/mathjs
 
 * _A captured pieces window component._
 
-## Future features
-
 * _Add a moves history list._
+
+## Future Features
 
 * _Add new game pieces: prince, camel, elephant, cannon, ship, gryphon._
 
-* _Add turns, white only moves one piece, then black moves one piece… etc._
+* _Add player turns enforcement._
 
 * _Add game piece move checking to only allow pieces to move to a “legal” square._
 
-* _Add a skinning feature to change the look of the game._
+## Wishlist Features
 
-* _Add an ability to drag and drop pieces, using libraries that can work with either a mouse or touchscreen._
+* _Add a scripted interface (to set up the next feature.)_
+
+* _Add a Human player vs 1 AI mode, with the AI making random legal moves._
+  * _Modify the AI mode, with the AI using the Min-Max Algorithm, with one branch look-ahead._
+  * _Modify Min-Max Algorithm with multi-branch look-ahead._
+  * _Modify Min-Max-multi-branch Algorithm to use Alpha-Beta Pruning._
+
+* _Refactor for responsive UI._
+
+* _Add a skinning feature to change the look of the game._
 
 * _Refactor the game state to only use a 1-dimensional array to speed up the game._
 
 * _Refactor for React Native, to create an Andriod app._
 
-* _Refactor for responsive UI._
-
-* _Add a scripted interface (to set up the next feature.)_
-
-* _Add 1 vs CPU mode, with the AI using a technique called alpha-beta pruning._
-
 * _Add user login accounts._
 
 * _Add backend for firebase._
-
-* _Add chat feature._
 
 ## Known Bugs
 
