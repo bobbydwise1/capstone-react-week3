@@ -1,7 +1,7 @@
 {
   "name": "chess-ancient-persia",
   "version": "1.0.0",
-  "description": "Chess Variant - Ancient Persia, Tamerlame Chess",
+  "description": "Chess Variant - Ancient Persia, Tamerlane Chess",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/** src/**/**; exit 0",

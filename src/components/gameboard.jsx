@@ -38,17 +38,17 @@ class Gameboard extends React.Component {
       currentlyMovingAPiece: false,
       gameSystem: math.matrix([
         [1,1,1,1,1,1,1,1,1,1,1,1,1],
-        [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
+        [1,'🐘','','🐫','','🔫','','🔫','','🐫','','🐘',1],
         [1,'♜','♞','♝','⚓','🤴','♚','🤴','⚓','♝','♞','♜',1],
         [1,'♟','♟','♟','♟','♟','♟','♟','♟','♟','♟','♟',1],
-        [1,0,0,0,0,0,0,0,0,0,0,0,1],
-        [1,0,0,0,0,0,0,0,0,0,0,0,1],
-        [1,0,0,0,0,0,0,0,0,0,0,0,1],
-        [1,0,0,0,0,0,0,0,0,0,0,0,1],
-        [1,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,'','','','','','','','','','','',1],
+        [1,'','','','','','','','','','','',1],
+        [1,'','','','','','','','','','','',1],
+        [1,'','','','','','','','','','','',1],
+        [1,'','','','','','','','','','','',1],
         [1,'♙','♙','♙','♙','♙','♙','♙','♙','♙','♙','♙',1],
         [1,'♖','♘','♗','⚓','🤴','♔','🤴','⚓','♗','♘','♖',1],
-        [1,'🐘',0,'🐫',0,'🔫',0,'🔫',0,'🐫',0,'🐘',1],
+        [1,'🐘','','🐫','','🔫','','🔫','','🐫','','🐘',1],
         [1,1,1,1,1,1,1,1,1,1,1,1,1]
       ]),
     };
@@ -64,12 +64,12 @@ class Gameboard extends React.Component {
       temp.currentSelectedPieceValue = this.state.gameSystem._data[yPos][xPos];
       temp.currentlyMovingAPiece = true;
     } else {
-      temp.gameSystem._data[temp.currentSelectedPieceYPos][temp.currentSelectedPieceXPos] = 0;
+      temp.gameSystem._data[temp.currentSelectedPieceYPos][temp.currentSelectedPieceXPos] = '';
       temp.gameSystem._data[yPos][xPos] = temp.currentSelectedPieceValue;
       temp.moveHistory.push({moveId: temp.currentMoveNumber, pieceMoved: temp.currentSelectedPieceValue, from: [temp.currentSelectedPieceYPos, temp.currentSelectedPieceXPos], to: [yPos, xPos]})
       temp.currentSelectedPieceYPos = null;
       temp.currentSelectedPieceXPos = null;
-      temp.currentSelectedPieceValue = 0;
+      temp.currentSelectedPieceValue = '0';
       temp.currentMoveNumber++;
       temp.currentlyMovingAPiece = false;
     }

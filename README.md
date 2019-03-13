@@ -1,12 +1,8 @@
-# _Chess Variant - Tamerlame 2000._
+# _Tamerlane Chess 2000._
 
-#### _This is a game that is a spin-off of chess.  This version of chess will use a bigger game board (bigger than 8x8), and will have more chess pieces that are different than the traditional chess pieces._
+#### _This is a game that is a spin-off of chess.  This version of chess will use a bigger game board, and will have more chess pieces that are different than the traditional chess pieces._
 
-_This specific repo is the 2nd week version of my capstone project for Epicodus._
-
-_If you want to see the 1st week version of this repo, see the following link:_
-
-https://github.com/bobbydwise1/capstone-react-week1.git
+_This specific repo is the 3rd week version of my capstone project for Epicodus._
 
 #### By _**Robert Lee**_
 
@@ -15,13 +11,20 @@ https://github.com/bobbydwise1/capstone-react-week1.git
 _A variant of chess, created in React._
 
 * _See the following weblink for the rules this game is based on:_
-http://history.chess.free.fr/tamerlane2.htm#Moves
+
+**http://history.chess.free.fr/tamerlane2.htm#Moves**
 
 * _The ancient version of this game is much more complex and "bloody".  The modern rules attempt to slow the game down and add more strategy._
+
+* _The game is named after the medieval Persian conqueror, Amir Timur, aka Timur the Lame, aka Tamerlane.  See the following Wikipedia article for more information:_
+
+**https://en.wikipedia.org/wiki/Timur**
+
 
 * _Note!  There is a version of this project with pure static components.  The link to this site is:_
 
 **https://github.com/bobbydwise1/capstone-react-static.git**
+
 
 ## Setup/Installation Requirements
 
@@ -64,18 +67,18 @@ https://github.com/josdejong/mathjs
 
 **import * as math from 'mathjs';**
 
-**const gameSystem = math.matrix([
-[1,1,1,1,1,1,1,1,1,1,1,1,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,1],
-[1,1,1,1,1,1,1,1,1,1,1,1,1]
+**const gameSystem = math.matrix([  
+[1,1,1,1,1,1,1,1,1,1,1,1,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,0,0,0,0,0,0,0,0,0,0,0,1],  
+[1,1,1,1,1,1,1,1,1,1,1,1,1]  
 ]);**
 
 * _Each (Y,X) coordinate of the matrix will hold a string prepresenting a piece.  These arrays are also historical state slices of the game, which can be stored in sequence._
@@ -84,7 +87,7 @@ https://github.com/josdejong/mathjs
 
 * _This gameBoard component has had state lifted into it._
 
-* _The visible game grid is a 10 x 11 grid._
+* _The visible game grid is a 11 x 11 grid._
 
 * _There will at least be all the traditional chess piece graphics of pawn, rook, knight, bishop, queen, and king._
 
@@ -141,7 +144,7 @@ https://github.com/josdejong/mathjs
 
 ## Technologies Used
 
-* _Javascript, jQuery, HTML, CSS, Bootstrap, Atom, NPM, node.js, Webpack, React, Redux, math.js library._
+* _Javascript, jQuery, HTML, CSS, Bootstrap, Atom, NPM, node.js, Webpack, React, math.js library._
 
 ### License
 

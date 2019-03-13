@@ -32,7 +32,7 @@ function AboutRules() {
     {id: 3, ruleName: "♙ ♕ Pawn Promotion to Queen", info: "Pawns promote only to queens when they reach the other side of the game board."},
     {id: 4, ruleName: "🤴 ♕ Prince Promotion to Queen", info: "When the prince reaches the opponent\'s pawn\'s row, they prince is promoted to queen.  Endgame queens typically spell doom for the oppossing player."},
     {id: 5, ruleName: "⚓ 🦅 Ship Promotion to Gryphon", info: "If a ship reaches the opponent\'s side of the game board, it is promoted to gryphon.  Likewise, endgame gryphons typically spell doom for the other player."},
-    {id: 6, ruleName: "♕ 🦅 Wild Tamerlame Chess (variant)", info: "If the Tamerlame Chess 2000 rules are considered to slow of a game pace, then consider creating a different initial setup where the princes are replaced by queens, and ships replaced by gryphons.  Since there are no more princes, King\'s Succession is void."},
+    {id: 6, ruleName: "♕ 🦅 Wild Tamerlane Chess (variant)", info: "If the Tamerlane Chess 2000 rules are considered to slow of a game pace, then consider creating a different initial setup where the princes are replaced by queens, and ships replaced by gryphons.  Since there are no more princes, King\'s Succession is void."},
     {id: 7, ruleName: "🏰 Ancient Citadel", info: "This square does not do anything on this version of the game."}
     ]
   };
