@@ -306,16 +306,15 @@ class Gameboard extends React.Component {
            <div style={gridOuter}></div>
 
          </div>
-         <MoveHistory moveNumber={this.state.currentMoveNumber}></MoveHistory>
-         <CapturedBox></CapturedBox>
+         <MoveHistory
+           currentMoveNumber={this.state.currentMoveNumber}
+           moveHistory={this.state.moveHistory}
+         />
+       <CapturedBox />
       </div>
 
     );
   }
 }
-// GameBoard.propTypes = {
-//   entireState: PropTypes.object
-// };
-
 
 export default Gameboard;
