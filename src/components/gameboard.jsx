@@ -8,17 +8,33 @@ import CapturedBox from './CapturedBox';
 
 class Square extends React.Component {
   render() {
-    return (
-      <button style={{
-        backgroundColor: "lightGrey",
-        width: '70px',
-        height: '70px',
-        verticalAlign: "middle",
-        textAlign:  "center",
-        fontSize: "32pt"
-      }}
-      className="square" onClick={() => this.props.onClick()}>{this.props.value}</button>
-    );
+    let boxColorDark = {
+      backgroundColor: 'green',
+      width: '70px',
+      height: '70px',
+      verticalAlign: "middle",
+      textAlign:  "center",
+      fontSize: "32pt"
+    };
+    let boxColorLight = {
+      backgroundColor: 'white',
+      width: '70px',
+      height: '70px',
+      verticalAlign: "middle",
+      textAlign:  "center",
+      fontSize: "32pt"
+    };
+    // console.log("what is this color? " + JSON.stringify(this.props))
+    if ((this.props.yPos%2===1 && this.props.xPos%2===0) || (this.props.yPos%2===0 && this.props.xPos%2===1))
+    {return (
+      <div style={boxColorDark}
+      className="square" onClick={() => this.props.onClick()}>{this.props.value}</div>
+    );}
+    else
+    {return (
+      <div style={boxColorLight}
+      className="square" onClick={() => this.props.onClick()}>{this.props.value}</div>
+    );}
   }
 }
 
@@ -80,7 +96,7 @@ class Gameboard extends React.Component {
 
   renderSquare(yPos,xPos) {
     return (
-      <Square value={this.state.gameSystem._data[yPos][xPos]} onClick={() => this.handleClick(yPos,xPos)}/>
+      <Square yPos={yPos} xPos={xPos}  value={this.state.gameSystem._data[yPos][xPos]} onClick={() => this.handleClick(yPos,xPos)}/>
     );
   }
 
