@@ -2,7 +2,8 @@ import React from 'react';
 import Header from './Header';
 import MoveHistory from './MoveHistory';
 import Welcome from './Welcome';
-import GameRoute from './Gameroute';
+// import GameRoute from './Gameroute';
+import Gameboard from './gameboard';
 import AboutRules from './AboutRules';
 import Error404 from './Error404';
 import { Switch, Route, Link } from 'react-router-dom';
@@ -26,7 +27,7 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={Welcome}/>
-        <Route path='/GameRoute' component={GameRoute}/>
+        <Route path='/GameBoard' component={Gameboard}/>
         <Route path='/AboutRules' component={AboutRules}/>
         <Route component={Error404}/>
       </Switch>
