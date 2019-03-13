@@ -12,17 +12,17 @@ function MoveHistory(props) {
 
   console.log("What is JSON.stringify(props)? :" + JSON.stringify(props))
 
-  const dummyTest = {
-    moveNumber: 222
-  }
-
   return (
     <div style={compBox}>
       <h1>MOVE HISTORY: Current Turn Number: <a>{props.currentMoveNumber}</a></h1>
       <div style={compBox}>
-        <ol>
-          {JSON.stringify(props.moveHistory)}
-        </ol>
+        <ul>
+          {Object.keys(props.moveHistory).map(function(moveId) {
+            var item = props.moveHistory[moveId];
+            return (<li><h2># {item.moveId} : {item.pieceMoved} from ({item.from[0]},{item.from[1]}) to ({item.to[0]},{item.to[1]}).</h2></li>)
+          })
+          }
+        </ul>
       </div>
     </div>
   );
